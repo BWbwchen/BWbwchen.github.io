@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on BoWeiChen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/ctf/</link>
+    <description>Recent content in CTF on BoWeiChen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 31 Jan 2021 16:15:04 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF rootme process</title>
+      <link>https://BWbwchen.github.io/posts/ctf_rootme_process/</link>
+      <pubDate>Sun, 31 Jan 2021 16:15:04 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/ctf_rootme_process/</guid>
+      <description>Root me process</description>
+    </item>
+    
+  </channel>
+</rss>
