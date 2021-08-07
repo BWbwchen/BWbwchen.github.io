@@ -5,7 +5,34 @@
     <link>https://BWbwchen.github.io/posts/</link>
     <description>Recent content in Posts on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Feb 2021 23:29:50 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 20:01:29 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go interface for inheritance</title>
+      <link>https://BWbwchen.github.io/posts/gooop/</link>
+      <pubDate>Sat, 07 Aug 2021 20:01:29 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gooop/</guid>
+      <description>CRUD with clean code by using Go embed struct</description>
+    </item>
+    
+    <item>
+      <title>Go Struct and Interface</title>
+      <link>https://BWbwchen.github.io/posts/gostructinterface/</link>
+      <pubDate>Sat, 07 Aug 2021 19:23:32 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gostructinterface/</guid>
+      <description>Struct wrap things, Interface make a member-required function list</description>
+    </item>
+    
+    <item>
+      <title>Os_in_rust</title>
+      <link>https://BWbwchen.github.io/posts/os_in_rust/</link>
+      <pubDate>Mon, 08 Feb 2021 16:17:03 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/os_in_rust/</guid>
+      <description>write an os in rust</description>
+    </item>
+    
     <item>
       <title>Block chain</title>
       <link>https://BWbwchen.github.io/posts/block_chain/</link>

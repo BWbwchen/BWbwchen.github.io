@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on BoWeiChen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/golang/</link>
+    <description>Recent content in Golang on BoWeiChen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 07 Aug 2021 20:01:29 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go interface for inheritance</title>
+      <link>https://BWbwchen.github.io/posts/gooop/</link>
+      <pubDate>Sat, 07 Aug 2021 20:01:29 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gooop/</guid>
+      <description>CRUD with clean code by using Go embed struct</description>
+    </item>
+    
+    <item>
+      <title>Go Struct and Interface</title>
+      <link>https://BWbwchen.github.io/posts/gostructinterface/</link>
+      <pubDate>Sat, 07 Aug 2021 19:23:32 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gostructinterface/</guid>
+      <description>Struct wrap things, Interface make a member-required function list</description>
+    </item>
+    
+  </channel>
+</rss>

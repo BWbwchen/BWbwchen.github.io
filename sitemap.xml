@@ -1,73 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://BWbwchen.github.io/posts/block_chain/</loc>
-    <lastmod>2021-02-03T23:29:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://BWbwchen.github.io/tags/block-chain/</loc>
-    <lastmod>2021-02-03T23:29:50+08:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://BWbwchen.github.io/</loc>
-    <lastmod>2021-02-03T23:29:50+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/gooop/</loc>
+    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/golang/</loc>
+    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+  </url><url>
     <loc>https://BWbwchen.github.io/posts/</loc>
-    <lastmod>2021-02-03T23:29:50+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+  </url><url>
     <loc>https://BWbwchen.github.io/tags/</loc>
+    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/gostructinterface/</loc>
+    <lastmod>2021-08-07T19:23:32+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/os/</loc>
+    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/os_in_rust/</loc>
+    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/rust/</loc>
+    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/block_chain/</loc>
     <lastmod>2021-02-03T23:29:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/block-chain/</loc>
+    <lastmod>2021-02-03T23:29:50+08:00</lastmod>
+  </url><url>
     <loc>https://BWbwchen.github.io/tags/ctf/</loc>
     <lastmod>2021-01-31T16:15:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/posts/ctf_rootme_process/</loc>
     <lastmod>2021-01-31T16:15:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/tags/netsec/</loc>
     <lastmod>2021-01-31T16:15:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2021-01-27T16:49:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/posts/note/bit_field/</loc>
     <lastmod>2021-01-27T16:49:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/search/</loc>
     <lastmod>2021-01-25T03:58:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/archives/</loc>
     <lastmod>2021-01-25T03:58:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://BWbwchen.github.io/series/</loc>
   </url>
-  
 </urlset>

