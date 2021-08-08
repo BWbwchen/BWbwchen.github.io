@@ -3,18 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://BWbwchen.github.io/</loc>
-    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/shorturlcicd/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/docker/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/docker-compose/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/kubernetes/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/</loc>
+    <lastmod>2021-08-08T16:11:08+08:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/posts/gooop/</loc>
     <lastmod>2021-08-07T20:01:29+08:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/tags/golang/</loc>
-    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/posts/</loc>
-    <lastmod>2021-08-07T20:01:29+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/tags/</loc>
     <lastmod>2021-08-07T20:01:29+08:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/posts/gostructinterface/</loc>
@@ -57,6 +69,8 @@
     <lastmod>2021-01-25T03:58:09+00:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/categories/</loc>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/ci/cd/</loc>
   </url><url>
     <loc>https://BWbwchen.github.io/series/</loc>
   </url>

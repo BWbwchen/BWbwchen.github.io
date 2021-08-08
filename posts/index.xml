@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/posts/</link>
     <description>Recent content in Posts on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 07 Aug 2021 20:01:29 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Aug 2021 16:11:08 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI/CD on gitlab-ci</title>
+      <link>https://BWbwchen.github.io/posts/shorturlcicd/</link>
+      <pubDate>Sun, 08 Aug 2021 16:11:08 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/shorturlcicd/</guid>
+      <description>CI/CD on gitlab-ci with kubernetes</description>
+    </item>
+    
     <item>
       <title>Go interface for inheritance</title>
       <link>https://BWbwchen.github.io/posts/gooop/</link>
