@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Aug 2021 16:11:08 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Aug 2021 12:39:47 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moscow_notation</title>
+      <link>https://BWbwchen.github.io/posts/moscow_notation/</link>
+      <pubDate>Thu, 12 Aug 2021 12:39:47 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/moscow_notation/</guid>
+      <description>What is MOSCOW notation?</description>
+    </item>
+    
     <item>
       <title>CI/CD on gitlab-ci</title>
       <link>https://BWbwchen.github.io/posts/shorturlcicd/</link>
