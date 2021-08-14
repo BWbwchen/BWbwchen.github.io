@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 12 Aug 2021 12:39:47 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 16:24:04 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Epoll study</title>
+      <link>https://BWbwchen.github.io/posts/http_server_in_go/</link>
+      <pubDate>Fri, 13 Aug 2021 16:24:04 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/http_server_in_go/</guid>
+      <description>let&amp;rsquo;s study about epoll, blocking and non-blocking</description>
+    </item>
+    
     <item>
       <title>Moscow_notation</title>
       <link>https://BWbwchen.github.io/posts/moscow_notation/</link>

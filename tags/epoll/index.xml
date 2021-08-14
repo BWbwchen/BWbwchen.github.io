@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>epoll on BoWeiChen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/epoll/</link>
+    <description>Recent content in epoll on BoWeiChen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 13 Aug 2021 16:24:04 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/epoll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Epoll study</title>
+      <link>https://BWbwchen.github.io/posts/http_server_in_go/</link>
+      <pubDate>Fri, 13 Aug 2021 16:24:04 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/http_server_in_go/</guid>
+      <description>let&amp;rsquo;s study about epoll, blocking and non-blocking</description>
+    </item>
+    
+  </channel>
+</rss>
