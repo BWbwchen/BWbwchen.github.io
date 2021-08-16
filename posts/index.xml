@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/posts/</link>
     <description>Recent content in Posts on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Aug 2021 16:24:04 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 21:07:21 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tinyurl</title>
+      <link>https://BWbwchen.github.io/posts/tinyurl/</link>
+      <pubDate>Mon, 16 Aug 2021 21:07:21 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/tinyurl/</guid>
+      <description>Build a Full-Stack Tinyurl service in golang using Gin, Redis, MongoDB and Zookeeper</description>
+    </item>
+    
     <item>
       <title>Epoll study</title>
       <link>https://BWbwchen.github.io/posts/http_server_in_go/</link>
