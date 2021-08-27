@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microservice on BoWeiChen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/microservice/</link>
+    <description>Recent content in microservice on BoWeiChen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Aug 2021 14:22:27 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API gateway for microservice with Kong</title>
+      <link>https://BWbwchen.github.io/posts/api-gateway-with-kong/</link>
+      <pubDate>Fri, 27 Aug 2021 14:22:27 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/api-gateway-with-kong/</guid>
+      <description>API gateway with Kong</description>
+    </item>
+    
+  </channel>
+</rss>
