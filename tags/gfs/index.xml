@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gfs on BoWeiChen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/gfs/</link>
+    <description>Recent content in gfs on BoWeiChen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Dec 2021 14:14:21 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/gfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google File System paper note</title>
+      <link>https://BWbwchen.github.io/posts/gfs/</link>
+      <pubDate>Mon, 20 Dec 2021 14:14:21 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gfs/</guid>
+      <description>Paper note of Google File System</description>
+    </item>
+    
+  </channel>
+</rss>

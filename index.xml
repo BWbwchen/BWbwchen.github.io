@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 27 Aug 2021 14:22:27 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 14:14:21 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google File System paper note</title>
+      <link>https://BWbwchen.github.io/posts/gfs/</link>
+      <pubDate>Mon, 20 Dec 2021 14:14:21 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/gfs/</guid>
+      <description>Paper note of Google File System</description>
+    </item>
+    
     <item>
       <title>API gateway for microservice with Kong</title>
       <link>https://BWbwchen.github.io/posts/api-gateway-with-kong/</link>
@@ -67,15 +76,6 @@
       
       <guid>https://BWbwchen.github.io/posts/gostructinterface/</guid>
       <description>Struct wrap things, Interface make a member-required function list</description>
-    </item>
-    
-    <item>
-      <title>Os_in_rust</title>
-      <link>https://BWbwchen.github.io/posts/os_in_rust/</link>
-      <pubDate>Mon, 08 Feb 2021 16:17:03 +0800</pubDate>
-      
-      <guid>https://BWbwchen.github.io/posts/os_in_rust/</guid>
-      <description>write an os in rust</description>
     </item>
     
     <item>

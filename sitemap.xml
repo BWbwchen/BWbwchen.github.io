@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://BWbwchen.github.io/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/distributed-system/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/gfs/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/gfs/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/posts/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
+    <loc>https://BWbwchen.github.io/tags/</loc>
+    <lastmod>2021-12-20T14:14:21+08:00</lastmod>
+  </url><url>
     <loc>https://BWbwchen.github.io/posts/api-gateway-with-kong/</loc>
     <lastmod>2021-08-27T14:22:27+08:00</lastmod>
   </url><url>
-    <loc>https://BWbwchen.github.io/</loc>
-    <lastmod>2021-08-27T14:22:27+08:00</lastmod>
-  </url><url>
     <loc>https://BWbwchen.github.io/tags/microservice/</loc>
-    <lastmod>2021-08-27T14:22:27+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/posts/</loc>
-    <lastmod>2021-08-27T14:22:27+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/tags/</loc>
     <lastmod>2021-08-27T14:22:27+08:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/tags/docker/</loc>
@@ -55,15 +64,6 @@
   </url><url>
     <loc>https://BWbwchen.github.io/posts/gostructinterface/</loc>
     <lastmod>2021-08-07T19:23:32+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/tags/os/</loc>
-    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/posts/os_in_rust/</loc>
-    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
-  </url><url>
-    <loc>https://BWbwchen.github.io/tags/rust/</loc>
-    <lastmod>2021-02-08T16:17:03+08:00</lastmod>
   </url><url>
     <loc>https://BWbwchen.github.io/posts/block_chain/</loc>
     <lastmod>2021-02-03T23:29:50+08:00</lastmod>

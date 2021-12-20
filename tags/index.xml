@@ -5,7 +5,25 @@
     <link>https://BWbwchen.github.io/tags/</link>
     <description>Recent content in Tags on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 27 Aug 2021 14:22:27 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 14:14:21 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>distributed system</title>
+      <link>https://BWbwchen.github.io/tags/distributed-system/</link>
+      <pubDate>Mon, 20 Dec 2021 14:14:21 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gfs</title>
+      <link>https://BWbwchen.github.io/tags/gfs/</link>
+      <pubDate>Mon, 20 Dec 2021 14:14:21 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/gfs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>microservice</title>
       <link>https://BWbwchen.github.io/tags/microservice/</link>
@@ -75,24 +93,6 @@
       <pubDate>Sun, 08 Aug 2021 16:11:08 +0800</pubDate>
       
       <guid>https://BWbwchen.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OS</title>
-      <link>https://BWbwchen.github.io/tags/os/</link>
-      <pubDate>Mon, 08 Feb 2021 16:17:03 +0800</pubDate>
-      
-      <guid>https://BWbwchen.github.io/tags/os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>https://BWbwchen.github.io/tags/rust/</link>
-      <pubDate>Mon, 08 Feb 2021 16:17:03 +0800</pubDate>
-      
-      <guid>https://BWbwchen.github.io/tags/rust/</guid>
       <description></description>
     </item>
     
