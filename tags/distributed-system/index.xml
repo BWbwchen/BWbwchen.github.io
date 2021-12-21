@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/tags/distributed-system/</link>
     <description>Recent content in distributed system on BoWeiChen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Dec 2021 14:14:21 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 16:25:00 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware FT paper note</title>
+      <link>https://BWbwchen.github.io/posts/vmware_ft/</link>
+      <pubDate>Tue, 21 Dec 2021 16:25:00 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/vmware_ft/</guid>
+      <description>Paper note of VMware FT</description>
+    </item>
+    
     <item>
       <title>Google File System paper note</title>
       <link>https://BWbwchen.github.io/posts/gfs/</link>
