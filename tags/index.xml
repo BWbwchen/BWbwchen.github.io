@@ -5,13 +5,22 @@
     <link>https://BWbwchen.github.io/tags/</link>
     <description>Recent content in Tags on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 21 Dec 2021 16:25:00 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 11:43:17 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>distributed system</title>
       <link>https://BWbwchen.github.io/tags/distributed-system/</link>
-      <pubDate>Tue, 21 Dec 2021 16:25:00 +0800</pubDate>
+      <pubDate>Sun, 23 Jan 2022 11:43:17 +0800</pubDate>
       
       <guid>https://BWbwchen.github.io/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raft</title>
+      <link>https://BWbwchen.github.io/tags/raft/</link>
+      <pubDate>Sun, 23 Jan 2022 11:43:17 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/raft/</guid>
       <description></description>
     </item>
     

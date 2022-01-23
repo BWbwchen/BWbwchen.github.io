@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/tags/distributed-system/</link>
     <description>Recent content in distributed system on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 21 Dec 2021 16:25:00 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 11:43:17 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raft</title>
+      <link>https://BWbwchen.github.io/posts/raft/</link>
+      <pubDate>Sun, 23 Jan 2022 11:43:17 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/raft/</guid>
+      <description>Paper note of Raft consensus algorithm</description>
+    </item>
+    
     <item>
       <title>VMware FT paper note</title>
       <link>https://BWbwchen.github.io/posts/vmware_ft/</link>

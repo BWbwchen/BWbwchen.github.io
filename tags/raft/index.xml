@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raft on Bo-Wei Chen&#39;s Blog</title>
+    <link>https://BWbwchen.github.io/tags/raft/</link>
+    <description>Recent content in raft on Bo-Wei Chen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 Jan 2022 11:43:17 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raft</title>
+      <link>https://BWbwchen.github.io/posts/raft/</link>
+      <pubDate>Sun, 23 Jan 2022 11:43:17 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/raft/</guid>
+      <description>Paper note of Raft consensus algorithm</description>
+    </item>
+    
+  </channel>
+</rss>
