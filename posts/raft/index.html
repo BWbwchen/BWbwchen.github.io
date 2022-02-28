@@ -6,14 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Raft | Bo-Wei Chen&#39;s Blog</title>
-
 <meta name="keywords" content="distributed system, raft" />
 <meta name="description" content="Paper note of Raft consensus algorithm">
 <meta name="author" content="Bo-Wei Chen">
 <link rel="canonical" href="https://BWbwchen.github.io/posts/raft/" />
-<link href="/assets/css/stylesheet.min.d5d820de85dae34a78c22303e07aa685bb90ec25a056c702c0b1a964ca68861d.css" integrity="sha256-1dgg3oXa40p4wiMD4HqmhbuQ7CWgVscCwLGpZMpohh0=" rel="preload stylesheet"
-    as="style">
-
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://BWbwchen.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://BWbwchen.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://BWbwchen.github.io/favicon-32x32.png">
@@ -21,19 +20,90 @@
 <link rel="mask-icon" href="https://BWbwchen.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.80.0" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
 
 <meta property="og:title" content="Raft" />
 <meta property="og:description" content="Paper note of Raft consensus algorithm" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://BWbwchen.github.io/posts/raft/" />
-<meta property="article:published_time" content="2022-01-23T11:43:17+08:00" />
-<meta property="article:modified_time" content="2022-01-23T11:43:17+08:00" />
+<meta property="og:url" content="https://BWbwchen.github.io/posts/raft/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-23T11:43:17&#43;08:00" />
+<meta property="article:modified_time" content="2022-01-23T11:43:17&#43;08:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Raft"/>
 <meta name="twitter:description" content="Paper note of Raft consensus algorithm"/>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://BWbwchen.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Raft",
+      "item": "https://BWbwchen.github.io/posts/raft/"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +114,7 @@
   "keywords": [
     "distributed system", "raft"
   ],
-  "articleBody": "  Goal  Solve split-brain by majority vote. Leader election Log replication Safety The stronger degree of coherency    5 Property  Election safety: Only 1 leader. Leader Append-Only : leader only append new entry in its log. (No delete its log). Log Matching : identify log entry by (term number, log index). Leader Completeness: if a log entry is committed in a given term, then it will appear in the leader’s log. State Machine Safety: If a machine has an applied log entry at index $$t$$ , then no other server will have a applied different entry at index $$t$$ .    Consensus Algorithm  Keeping the replicated log in replicated state machine consistent. Once commands are properly replicated, each server’s state machine process them and make each server identical    Raft Basics  Terms (Time, clock)   When does the term end? #raft_problem\n   A follower receives no communication over a period of time(election timeout), and it begins an election to choose a new leader.      Raft divides time into terms.\n  Each term begins with an election.\n  Act as a logical clock to distinguish which server is newer.\n  Use term number to detect inconsistencies.\n   State  How to know the total number of the cluster? #raft_problem  By configuration.     RPCs Calls  RequestVote AppendEntries  replicate log heartbeat message(append 0 entries)     Log  (Term number, Log index) can represent an unique log entry. A log entry is considered committed if it is stored on majority of the servers (safe for that entry to be applied to the state machine).  Leader will decides when to apply the log entry command. #raft_problem        Leader election    A follower receives no communication over a period of time(election timeout), and it begins an election to choose a new leader.   heartbeat time « election timeout « infinity Raft paper use 10ms ~ 500ms.    increase its current term numbers and change the state to the candidate.    There are 3 cases:   a. It wins the election  it receives votes from a majority of the servers, which with the same term, in the cluster. How to vote? Vote for whom? → first-come-first-serve. It became a leader and sends heartbeat messages to all of the other servers.   b. another server is a leader already.  The leader’s term = the candidate’s term → candidate became a follower. The leader’s term rejects the leader and continues the election.   c. no winner(eg. split vote)  retry with a randomized election timeout.      There are some restriction for leader election:\n Leader election restriction      Log replication  Leader receive the client request → append the command to leader’s log → issue AppendEntries to all followers → leader applied the log and return.  What if follower crash? #raft_problem  leader retries the AppendEntries RPC indefinitely.     Consistency issue  properties : (2 entries in different logs have :)    the same (term number, log index) → same entry command    the same (term number, log index) → all of the preceding entries are the same (consistency check)     If the follower receive a log entry which doesn’t have any matched (term number, log index) with follower’s log, refuse to update, drop it. Leader crash will lead to inconsistencies.  Committing entries from previous terms   Solved by overwriting the followers' logs with leader’s log.  find the latest log entry where leader and follower agree → delete all the log entry after that entry → leader send the remain part.  leader will maintain a nextIndex for each follower. If the nextIndex is different, the RPC failed. → leader decrease the nextIndex and try to match.  nextIndex = index of the next new log entry.  (prevLogIndex, prevLogTerm)   Initialize nextindex with leader’s next new log entry index.            Safety  Each state machine should execute exactly same commands in the same order.  Leader election restriction  Leader for any given term ^^contains the entire previous term committed log.^^  Ensure this property from the moment of election.   When election, candidate request a RequestVote RPC.  the voter will compare the (term number, index number)  the candidate is older than voter → deny. the candidate is more up-to-date than voter → vote it.   How to compare? #raft_problem  Compare term first, new is better, then compare log index, new is better.        Committing entries from previous terms  What if the leader crashes during committing an entry? What should new leader do? How to determine commitment?  A log entry is considered committed if it is stored on majority of the servers (safe for that entry to be applied to the state machine). Only term 1 was committed. (c) shouldn’t happen.  Only try to commit NOW new entry to the replicas, once we done this, all prior (un-)committed entry will be automatically committed.   Follower and candidate crashes  Solved by overwriting the followers' logs with leader’s log.        Dynamic member in the cluster (configuration change mechanism)  Each server has different timing to apply the new configuration.  Can’t directly change, caused it will have 2 leader in some cases.    Two-phase approach  original configuration → old and new configuration (joint consensus) → new configuration In the joint consensus phase, old and new configuration work together to serve Raft service.    Problem  New servers need a long time to initialize.  New server will be in non-voting state until it caught up with the rest of the cluster. (by leader’s snapshot Log Compaction (by snapshot) )   The leader of joint consensus phase leader may not be part of the new configuration.  leader step down to follower state. Wait for a new election.   Removed server may disrupt the cluster by re-election.  server disregard(ignore) RequestVote RPC during the minimum election timeout of hearing from the leader.        Log Compaction (by snapshot)      Majority Vote  odd number of servers.  If you have 2x + 1 servers, then there can tolerant at most $x$ broken servers in order to run normally.      With Application  Record the client request    Start(request) - (log index, term numbers)   Problem  Does the failure really frequently happen? #raft_problem  Failure may not happened so frequently But slow follower will happen frequently.  Could we mix the slow follower and failure up? #raft_problem        ",
+  "articleBody": "  Goal  Solve split-brain by majority vote. Leader election Log replication Safety The stronger degree of coherency    5 Property  Election safety: Only 1 leader. Leader Append-Only : leader only append new entry in its log. (No delete its log). Log Matching : identify log entry by (term number, log index). Leader Completeness: if a log entry is committed in a given term, then it will appear in the leader’s log. State Machine Safety: If a machine has an applied log entry at index $t$ , then no other server will have a applied different entry at index $t$ .    Consensus Algorithm  Keeping the replicated log in replicated state machine consistent. Once commands are properly replicated, each server’s state machine process them and make each server identical    Raft Basics  Terms (Time, clock)   When does the term end? #raft_problem\n   A follower receives no communication over a period of time(election timeout), and it begins an election to choose a new leader.      Raft divides time into terms.\n  Each term begins with an election.\n  Act as a logical clock to distinguish which server is newer.\n  Use term number to detect inconsistencies.\n   State  How to know the total number of the cluster? #raft_problem  By configuration.     RPCs Calls  RequestVote AppendEntries  replicate log heartbeat message(append 0 entries)     Log  (Term number, Log index) can represent an unique log entry. A log entry is considered committed if it is stored on majority of the servers (safe for that entry to be applied to the state machine).  Leader will decides when to apply the log entry command. #raft_problem        Leader election    A follower receives no communication over a period of time(election timeout), and it begins an election to choose a new leader.   heartbeat time « election timeout « infinity Raft paper use 10ms ~ 500ms.    increase its current term numbers and change the state to the candidate.    There are 3 cases:   a. It wins the election  it receives votes from a majority of the servers, which with the same term, in the cluster. How to vote? Vote for whom? → first-come-first-serve. It became a leader and sends heartbeat messages to all of the other servers.   b. another server is a leader already.  The leader’s term = the candidate’s term → candidate became a follower. The leader’s term rejects the leader and continues the election.   c. no winner(eg. split vote)  retry with a randomized election timeout.      There are some restriction for leader election:\n Leader election restriction      Log replication  Leader receive the client request → append the command to leader’s log → issue AppendEntries to all followers → leader applied the log and return.  What if follower crash? #raft_problem  leader retries the AppendEntries RPC indefinitely.     Consistency issue  properties : (2 entries in different logs have :)    the same (term number, log index) → same entry command    the same (term number, log index) → all of the preceding entries are the same (consistency check)     If the follower receive a log entry which doesn’t have any matched (term number, log index) with follower’s log, refuse to update, drop it. Leader crash will lead to inconsistencies.  Committing entries from previous terms   Solved by overwriting the followers' logs with leader’s log.  find the latest log entry where leader and follower agree → delete all the log entry after that entry → leader send the remain part.  leader will maintain a nextIndex for each follower. If the nextIndex is different, the RPC failed. → leader decrease the nextIndex and try to match.  nextIndex = index of the next new log entry.  (prevLogIndex, prevLogTerm)   Initialize nextindex with leader’s next new log entry index.            Safety  Each state machine should execute exactly same commands in the same order.  Leader election restriction  Leader for any given term ^^contains the entire previous term committed log.^^  Ensure this property from the moment of election.   When election, candidate request a RequestVote RPC.  the voter will compare the (term number, index number)  the candidate is older than voter → deny. the candidate is more up-to-date than voter → vote it.   How to compare? #raft_problem  Compare term first, new is better, then compare log index, new is better.        Committing entries from previous terms  What if the leader crashes during committing an entry? What should new leader do? How to determine commitment?  A log entry is considered committed if it is stored on majority of the servers (safe for that entry to be applied to the state machine). Only term 1 was committed. (c) shouldn’t happen.  Only try to commit NOW new entry to the replicas, once we done this, all prior (un-)committed entry will be automatically committed.   Follower and candidate crashes  Solved by overwriting the followers' logs with leader’s log.        Dynamic member in the cluster (configuration change mechanism)  Each server has different timing to apply the new configuration.  Can’t directly change, caused it will have 2 leader in some cases.    Two-phase approach  original configuration → old and new configuration (joint consensus) → new configuration In the joint consensus phase, old and new configuration work together to serve Raft service.    Problem  New servers need a long time to initialize.  New server will be in non-voting state until it caught up with the rest of the cluster. (by leader’s snapshot Log Compaction (by snapshot) )   The leader of joint consensus phase leader may not be part of the new configuration.  leader step down to follower state. Wait for a new election.   Removed server may disrupt the cluster by re-election.  server disregard(ignore) RequestVote RPC during the minimum election timeout of hearing from the leader.        Log Compaction (by snapshot)      Majority Vote  odd number of servers.  If you have $2x + 1$ servers, then there can tolerant at most $x$ broken servers in order to run normally.      With Application  Record the client request    Start(request) - (log index, term numbers)   Problem  Does the failure really frequently happen? #raft_problem  Failure may not happened so frequently But slow follower will happen frequently.  Could we mix the slow follower and failure up? #raft_problem        ",
   "wordCount" : "991",
   "inLanguage": "en",
   "datePublished": "2022-01-23T11:43:17+08:00",
@@ -67,9 +137,6 @@
   }
 }
 </script>
-
-
-
 </head>
 
 <body class="" id="top">
@@ -83,46 +150,35 @@
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        .theme-toggle,
-        .top-link {
-            display: none;
-        }
 
-    </style>
-</noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://BWbwchen.github.io/" accesskey="h" title="Bo-Wei Chen&#39;s Blog (Alt + H)">Bo-Wei Chen&#39;s Blog</a>
             <span class="logo-switches">
-                <span class="theme-toggle" title="(Alt + T)">
-                    <a id="theme-toggle" accesskey="t">
-                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </a>
-                </span>
-                
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
-        <ul class="menu" id="menu" onscroll="menu_on_scroll()">
+        <ul id="menu">
             <li>
                 <a href="https://BWbwchen.github.io/posts/" title="Posts">
                     <span>Posts</span>
@@ -142,58 +198,71 @@
                 <a href="https://BWbwchen.github.io/archives" title="Archive">
                     <span>Archive</span>
                 </a>
-            </li></ul>
+            </li>
+        </ul>
     </nav>
 </header>
-
-    <main class="main">
+<main class="main">
 
 <article class="post-single">
   <header class="post-header">
+    <div class="breadcrumbs"><a href="https://BWbwchen.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://BWbwchen.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       Raft
     </h1>
-    <div class="post-description">
-      
-    </div>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2022-01-23 11:43:17 +0800 CST'>January 23, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 
-January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
-
-    </div>
-  </header> 
-
-  <div class="toc">
+</div>
+  </header> <div class="toc">
     <details >
-      <summary accesskey="c" title="(Alt + C)">
-        <div class="details">Table of Contents</div>
-      </summary>
-      <div class="inner"><ul><li>
-        <a href="#goal" aria-label="Goal">Goal</a></li><li>
-        <a href="#5-property" aria-label="5 Property">5 Property</a></li><li>
-        <a href="#consensus-algorithm" aria-label="Consensus Algorithm">Consensus Algorithm</a></li><li>
-        <a href="#raft-basics" aria-label="Raft Basics">Raft Basics</a></li><li>
-        <a href="#leader-election" aria-label="Leader election">Leader election</a></li><li>
-        <a href="#log-replication" aria-label="Log replication">Log replication</a></li><li>
-        <a href="#safety" aria-label="Safety">Safety</a><ul>
-            <li>
-        <a href="#leader-election-restriction" aria-label="Leader election restriction">Leader election restriction</a></li><li>
-        <a href="#committing-entries-from-previous-terms" aria-label="Committing entries from previous terms">Committing entries from previous terms</a></li></ul>
-    </li><li>
-        <a href="#dynamic-member-in-the-cluster-configuration-change-mechanism" aria-label="Dynamic member in the cluster (configuration change mechanism)">Dynamic member in the cluster (configuration change mechanism)</a><ul>
-            <li>
-        <a href="#two-phase-approach" aria-label="Two-phase approach">Two-phase approach</a></li><li>
-        <a href="#problem" aria-label="Problem">Problem</a></li></ul>
-    </li><li>
-        <a href="#log-compaction-by-snapshot" aria-label="Log Compaction (by snapshot)">Log Compaction (by snapshot)</a></li><li>
-        <a href="#majority-vote" aria-label="Majority Vote">Majority Vote</a></li><li>
-        <a href="#with-application" aria-label="With Application">With Application</a></li><li>
-        <a href="#problem-1" aria-label="Problem">Problem</a></li></ul>
-      </div>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#goal" aria-label="Goal">Goal</a></li>
+                <li>
+                    <a href="#5-property" aria-label="5 Property">5 Property</a></li>
+                <li>
+                    <a href="#consensus-algorithm" aria-label="Consensus Algorithm">Consensus Algorithm</a></li>
+                <li>
+                    <a href="#raft-basics" aria-label="Raft Basics">Raft Basics</a></li>
+                <li>
+                    <a href="#leader-election" aria-label="Leader election">Leader election</a></li>
+                <li>
+                    <a href="#log-replication" aria-label="Log replication">Log replication</a></li>
+                <li>
+                    <a href="#safety" aria-label="Safety">Safety</a><ul>
+                        
+                <li>
+                    <a href="#leader-election-restriction" aria-label="Leader election restriction">Leader election restriction</a></li>
+                <li>
+                    <a href="#committing-entries-from-previous-terms" aria-label="Committing entries from previous terms">Committing entries from previous terms</a></li></ul>
+                </li>
+                <li>
+                    <a href="#dynamic-member-in-the-cluster-configuration-change-mechanism" aria-label="Dynamic member in the cluster (configuration change mechanism)">Dynamic member in the cluster (configuration change mechanism)</a><ul>
+                        
+                <li>
+                    <a href="#two-phase-approach" aria-label="Two-phase approach">Two-phase approach</a></li>
+                <li>
+                    <a href="#problem" aria-label="Problem">Problem</a></li></ul>
+                </li>
+                <li>
+                    <a href="#log-compaction-by-snapshot" aria-label="Log Compaction (by snapshot)">Log Compaction (by snapshot)</a></li>
+                <li>
+                    <a href="#majority-vote" aria-label="Majority Vote">Majority Vote</a></li>
+                <li>
+                    <a href="#with-application" aria-label="With Application">With Application</a></li>
+                <li>
+                    <a href="#problem-1" aria-label="Problem">Problem</a>
+                </li>
+            </ul>
+        </div>
     </details>
-  </div>
-  <div class="post-content">
-<ul>
+</div>
+
+  <div class="post-content"><ul>
 <li>
 <h1 id="goal">Goal<a hidden class="anchor" aria-hidden="true" href="#goal">#</a></h1>
 <ul>
@@ -211,7 +280,7 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 <li>Leader Append-Only : leader only append new entry in its log. (No delete its log).</li>
 <li>Log Matching : identify log entry by (term number, log index).</li>
 <li>Leader Completeness: if a log entry is committed in a given term, then it will appear in the leader&rsquo;s log.</li>
-<li>State Machine Safety: If a machine has an <em>applied</em> log entry at index $$t$$ , then no other server will have a <em>applied</em> different entry at index $$t$$ .</li>
+<li>State Machine Safety: If a machine has an <em>applied</em> log entry at index $t$ , then no other server will have a <em>applied</em> different entry at index $t$ .</li>
 </ul>
 </li>
 <li>
@@ -225,7 +294,8 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 <h1 id="raft-basics">Raft Basics<a hidden class="anchor" aria-hidden="true" href="#raft-basics">#</a></h1>
 <ul>
 <li><strong>Terms</strong> (Time, clock)
-<img src="https://i.imgur.com/zmWQF42.png" alt="https://i.imgur.com/zmWQF42.png">
+<img loading="lazy" src="https://i.imgur.com/zmWQF42.png" alt="https://i.imgur.com/zmWQF42.png"  />
+
 <ul>
 <li>
 <p>When does the term end? #raft_problem</p>
@@ -252,7 +322,8 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 </ul>
 </li>
 <li><strong>State</strong>
-<img src="https://i.imgur.com/Rxqrl9I.png" alt="https://i.imgur.com/Rxqrl9I.png">
+<img loading="lazy" src="https://i.imgur.com/Rxqrl9I.png" alt="https://i.imgur.com/Rxqrl9I.png"  />
+
 <ul>
 <li>How to know the total number of the cluster? #raft_problem
 <ul>
@@ -273,7 +344,8 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 </ul>
 </li>
 <li><strong>Log</strong>
-<img src="https://i.imgur.com/hV06ZG0.png" alt="https://i.imgur.com/hV06ZG0.png">
+<img loading="lazy" src="https://i.imgur.com/hV06ZG0.png" alt="https://i.imgur.com/hV06ZG0.png"  />
+
 <ul>
 <li>(Term number, Log index) can represent an unique log entry.</li>
 <li>A log entry is considered <em>committed</em> if it is <strong>stored on majority of the servers</strong> (safe for that entry to be applied to the state machine).
@@ -427,7 +499,8 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 <ul>
 <li>A log entry is considered <em>committed</em> if it is <strong>stored on majority of the servers</strong> (safe for that entry to be applied to the state machine).</li>
 <li>Only term 1 was committed. (c) shouldn&rsquo;t happen.
-<img src="https://i.imgur.com/wj6qpUx.png" alt="https://i.imgur.com/wj6qpUx.png"></li>
+<img loading="lazy" src="https://i.imgur.com/wj6qpUx.png" alt="https://i.imgur.com/wj6qpUx.png"  />
+</li>
 <li><strong>Only try to commit NOW new entry to the replicas, once we done this, all prior (un-)committed entry will be automatically committed.</strong></li>
 </ul>
 </li>
@@ -480,7 +553,8 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 <li>
 <h1 id="log-compaction-by-snapshot">Log Compaction (by snapshot)<a hidden class="anchor" aria-hidden="true" href="#log-compaction-by-snapshot">#</a></h1>
 <ul>
-<li><img src="https://i.imgur.com/Q2THYci.png" alt="https://i.imgur.com/Q2THYci.png"></li>
+<li><img loading="lazy" src="https://i.imgur.com/Q2THYci.png" alt="https://i.imgur.com/Q2THYci.png"  />
+</li>
 </ul>
 </li>
 <li>
@@ -488,7 +562,7 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 <ul>
 <li>odd number of servers.
 <ul>
-<li>If you have 2x + 1 servers, then there can tolerant at most $x$ broken servers in order to run normally.</li>
+<li>If you have $2x + 1$ servers, then there can tolerant at most $x$ broken servers in order to run normally.</li>
 </ul>
 </li>
 </ul>
@@ -500,7 +574,7 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">            Start(request) -&gt; (log index, term numbers)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">            Start(request) -&gt; (log index, term numbers)
 </code></pre></div><ul>
 <li>
 <h1 id="problem-1">Problem<a hidden class="anchor" aria-hidden="true" href="#problem-1">#</a></h1>
@@ -519,16 +593,26 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 </li>
 </ul>
 
-</div>
+
+  </div>
+
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://BWbwchen.github.io/tags/distributed-system/">distributed system</a></li>
       <li><a href="https://BWbwchen.github.io/tags/raft/">raft</a></li>
     </ul>
-
-
-
-
+<nav class="paginav">
+  <a class="prev" href="https://BWbwchen.github.io/posts/rajaraman_and_wong_algorithm/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>Rajaraman and Wong algorithm</span>
+  </a>
+  <a class="next" href="https://BWbwchen.github.io/posts/vmware_ft/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>VMware FT paper note</span>
+  </a>
+</nav>
 
 
 <div class="share-buttons">
@@ -578,31 +662,31 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
 
   </footer>
 </article>
-    </main><footer class="footer">
+    </main>
+    
+<footer class="footer">
     <span>&copy; 2022 <a href="https://BWbwchen.github.io/">Bo-Wei Chen&#39;s Blog</a></span>
-    <span>&middot;</span>
-    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
-    <span>&middot;</span>
-    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
-
-
-<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
-    onload="hljs.initHighlightingOnLoad();"></script>
 <script>
-    window.onload = function () {
-        if (localStorage.getItem("menu-scroll-position")) {
-            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
     }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -617,10 +701,13 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
             if (id === "top") {
                 history.replaceState(null, null, " ");
             } else {
-                history.replaceState(null, null, `#${id}`);
+                history.pushState(null, null, `#${id}`);
             }
         });
     });
+
+</script>
+<script>
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -631,10 +718,6 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
             mybutton.style.opacity = "0";
         }
     };
-
-    function menu_on_scroll() {
-        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
-    }
 
 </script>
 <script>
@@ -649,7 +732,53 @@ January 23, 2022&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Bo-Wei Chen
     })
 
 </script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
 
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
 
 </html>

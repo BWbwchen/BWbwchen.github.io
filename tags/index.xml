@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Bo-Wei Chen&#39;s Blog</title>
     <link>https://BWbwchen.github.io/tags/</link>
     <description>Recent content in Tags on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Jan 2022 11:43:17 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 22:57:40 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAD</title>
+      <link>https://BWbwchen.github.io/tags/cad/</link>
+      <pubDate>Mon, 28 Feb 2022 22:57:40 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/cad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clustering</title>
+      <link>https://BWbwchen.github.io/tags/clustering/</link>
+      <pubDate>Mon, 28 Feb 2022 22:57:40 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EDA</title>
+      <link>https://BWbwchen.github.io/tags/eda/</link>
+      <pubDate>Mon, 28 Feb 2022 22:57:40 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/tags/eda/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>distributed system</title>
       <link>https://BWbwchen.github.io/tags/distributed-system/</link>

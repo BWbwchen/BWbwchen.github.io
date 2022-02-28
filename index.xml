@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bo-Wei Chen&#39;s Blog</title>
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Jan 2022 11:43:17 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 22:57:40 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rajaraman and Wong algorithm</title>
+      <link>https://BWbwchen.github.io/posts/rajaraman_and_wong_algorithm/</link>
+      <pubDate>Mon, 28 Feb 2022 22:57:40 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/rajaraman_and_wong_algorithm/</guid>
+      <description>Note for EDA cluster algorithm Rajaraman and Wong algorithm</description>
+    </item>
+    
     <item>
       <title>Raft</title>
       <link>https://BWbwchen.github.io/posts/raft/</link>
@@ -123,23 +132,7 @@
       <description>C++ bit field usage</description>
     </item>
     
-    <item>
-      <title>Search</title>
-      <link>https://BWbwchen.github.io/search/</link>
-      <pubDate>Mon, 25 Jan 2021 03:58:16 +0000</pubDate>
-      
-      <guid>https://BWbwchen.github.io/search/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>Archive</title>
-      <link>https://BWbwchen.github.io/archives/</link>
-      <pubDate>Mon, 25 Jan 2021 03:58:09 +0000</pubDate>
-      
-      <guid>https://BWbwchen.github.io/archives/</guid>
-      <description>archives</description>
-    </item>
     
   </channel>
 </rss>
