@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 28 Feb 2022 22:57:40 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Mar 2022 23:49:05 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FlowMap algorithm</title>
+      <link>https://BWbwchen.github.io/posts/flowmap_algorithm/</link>
+      <pubDate>Tue, 01 Mar 2022 23:49:05 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/flowmap_algorithm/</guid>
+      <description>Note for EDA cluster algorithm FlowMap algorithm</description>
+    </item>
+    
     <item>
       <title>Rajaraman and Wong algorithm</title>
       <link>https://BWbwchen.github.io/posts/rajaraman_and_wong_algorithm/</link>
