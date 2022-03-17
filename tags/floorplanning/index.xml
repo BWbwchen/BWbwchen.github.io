@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/tags/floorplanning/</link>
     <description>Recent content in floorplanning on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Mar 2022 10:01:26 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/floorplanning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Mar 2022 14:54:43 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/tags/floorplanning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ILP floorplanning algorithm</title>
+      <link>https://BWbwchen.github.io/posts/ilp_floorplanning_algorithm/</link>
+      <pubDate>Thu, 17 Mar 2022 14:54:43 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/ilp_floorplanning_algorithm/</guid>
+      <description>Note for EDA floorplanning algorithm - ILP floorplanning algorithm</description>
+    </item>
+    
     <item>
       <title>Normalized Polish Expression</title>
       <link>https://BWbwchen.github.io/posts/normalized_polish_expression/</link>
