@@ -5,7 +5,16 @@
     <link>https://BWbwchen.github.io/</link>
     <description>Recent content on Bo-Wei Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Mar 2022 14:54:43 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 19:53:45 +0800</lastBuildDate><atom:link href="https://BWbwchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mincut placement with propagation</title>
+      <link>https://BWbwchen.github.io/posts/mincut_placement_with_propagation/</link>
+      <pubDate>Sun, 20 Mar 2022 19:53:45 +0800</pubDate>
+      
+      <guid>https://BWbwchen.github.io/posts/mincut_placement_with_propagation/</guid>
+      <description>Note for EDA placement algorithm - Mincut placement with propagation</description>
+    </item>
+    
     <item>
       <title>ILP floorplanning algorithm</title>
       <link>https://BWbwchen.github.io/posts/ilp_floorplanning_algorithm/</link>
