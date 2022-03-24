@@ -29,7 +29,7 @@ output:
       in_header: giscus.html
 
 include: ["_footer.html"]
-exclude: ["docs.txt", "*.csv"]
+exclude: ["docs.txt", "*.csv", "Makefile"]
 
 collections:
   posts:
