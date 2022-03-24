@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://BWbwchen.github.io/about.html</loc>
-    <lastmod>2022-03-24T22:08:27+08:00</lastmod>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
     <loc>https://BWbwchen.github.io/blog.html</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
     <loc>https://BWbwchen.github.io/</loc>
-    <lastmod>2022-03-24T22:08:32+08:00</lastmod>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
     <loc>https://BWbwchen.github.io/software.html</loc>
-    <lastmod>2022-03-24T22:08:37+08:00</lastmod>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-gordian-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/gordian-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-mincut-placement-with-propagation/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/mincut-placement/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-ilp-floorplanning-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/ilp-floorplanning-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-stockmeyer-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/stockmeyer-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-fbb-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/fbb-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-eig-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/eig-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-fiduccia-and-mattheyses-algorithm-fm-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/fm-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-kernighan-and-lin-algorithm-kl-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/kl-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-flowmap-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/flowmap-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-normalized-polish-expression/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/normalized-polish-expression/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-rajaraman-and-wong-algorithm/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/rajaraman-and-wong-algorithm/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-raft/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/raft/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-vmware-ft-paper-note/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/vmware-ft-paper-note/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-google-file-system-paper-note/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/google-file-system-paper-note/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-api-gateway-for-microservice-with-kong/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/api-gateway-for-microservice-with-kong/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-tinyurl/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/tinyurl/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-epoll-study/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/epoll-study/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-moscow-notation/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/moscow-notation/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-cicd-on-gitlab-ci/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/cicd-on-gitlab-ci/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-go-interface-for-inheritance/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/go-interface-for-inheritance/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/2022-03-24-go-struct-interface/</loc>
-    <lastmod>2022-03-24T20:53:25+08:00</lastmod>
+    <loc>https://BWbwchen.github.io/posts/go-struct-interface/</loc>
+    <lastmod>2022-03-24T22:10:17+08:00</lastmod>
   </url>
 </urlset>
