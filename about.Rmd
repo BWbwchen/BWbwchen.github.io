@@ -2,6 +2,11 @@
 title: "Bo-Wei Chen, Tim"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(distilltools)
+```
+
 ![](https://avatars.githubusercontent.com/u/44916048?v=4)
 <style type="text/css">
     img {
@@ -16,8 +21,25 @@ title: "Bo-Wei Chen, Tim"
 ## About me
 I’m Bo-Wei Chen, you can call me Tim.
 
-I'm currently a master student major in Computer Science in National Tsing Hua University. My research topic is EDA, mainly focus on physical design. (Instructor: Prof. Ting-Chi Wang)
-I am interested in software engineering, and my undergraduate research mainly focuses on CV (computer vision) and Person ReID(Person Re-identification).
+I am a master student major in Computer Science in National Tsing Hua University. I study physical design in EDA and I love Long-distance running.
+
+## 🎓 Education
+- **National Tsing Hua University**, HsinChu, Tawan | MS in Computer Science
+
+<aside>
+ Sep. 2022(expected) - Jun. 2024 (expected)
+</aside>
+
+  My research topic is EDA, mainly focus on physical design. (Instructor: Prof. Ting-Chi Wang)
+
+- **National Tsing Hua University**, HsinChu, Tawan | BS in Computer Science
+
+<aside>
+ Sep. 2018 - Jun. 2022 (expected)
+</aside>
+
+  My undergraduate `r icon_link("file", "Research", "https://drive.google.com/file/d/1HpByl241IlU5HDt7_APYjcbWuynnbvOe/view?usp=sharing")` mainly focuses on CV (computer vision) and Person ReID(Person Re-identification). 
+
 
 ## 💻 Experience
 * Internship as a software engineer at Logitech.

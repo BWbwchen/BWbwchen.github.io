@@ -16,8 +16,6 @@ output:
   postcards::jolla
 ---
 
-
-
 Hi! <span class="wave">👋</span> I am a master student major in Computer Science in National Tsing Hua University. 
 
-My research topic is EDA, mainly focus on physical design.
+I study physical design in EDA and I love Long-distance running.
