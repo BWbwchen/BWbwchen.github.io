@@ -2305,6 +2305,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
        script.setAttribute("data-emit-metadata", "0");
        script.setAttribute("data-theme", "light");
        script.setAttribute("data-lang", "en");
+       script.setAttribute("data-loading", "lazy");
+       script.setAttribute("crossorigin", "anonymous");
+       script.setAttribute("data-input-position", "top");
 
 
        /* wait for article to load, append script to article element */
@@ -2321,6 +2324,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
        observer.observe(document.body, { childList: true });
      });
    </script>
+
   <!--/radix_placeholder_site_in_header-->
 
 
