@@ -16,8 +16,6 @@ navbar:
       href: software.html
     - text: "About"
       href: about.html
-    - text: "Resume"
-      href: https://drive.google.com/file/d/1t8FV8S4jzDyio3ZeNEqPZfboJH8evSoM/view?usp=sharing
     - icon: fab fa-github
       href: https://github.com/BWbwchen
     - icon: fab fa-linkedin
