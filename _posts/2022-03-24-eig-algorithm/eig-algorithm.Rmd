@@ -1,0 +1,81 @@
+---
+title: "EIG algorithm"
+description: |
+  Note for EDA partitioning algorithm - EIG algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-13
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - partitioning
+  - CAD
+
+---
+
+# Goal
+- Balanced bipartition.
+- divided the circuit into 2 equal-sized partitions.
+# Graph in Linear algebra
+- [good explanation](https://www.youtube.com/watch?v=zLuVrqlYKyg&list=PLLssT5z_DsK9JDLcT8T62VtzwyW9LNepV&index=29)
+- $A$ is adjacency matrix of undirected graph $G$ .
+- $x$ is a vector and is a value of each node in $G$ .
+- $Ax = y$ and what is the meaning of $y$ ?
+	- $y_i = \sum_{(i, j) \in E(G)} x_j$
+	- $y_i$ is the sum of the neighbor value of $x_i$
+- $Ax = \lambda x$
+	- Since $A$ is symmetric matrix $\rightarrow$ eigenvector are real and orthogonal!
+
+# Laplacian matrix $L$ of graph $G$
+- $D$ is degree matrix.
+	- $D_{ii} =$ degree of vertex $v_i$ .
+	- $D_{ij} = 0, i \neq j$
+- $L = D-A$
+- $L's$ trivial eigenpair
+	- $
+	    [1, \dots, 1] ^T 
+        $
+		- with $\lambda = 0$
+
+# $\lambda_2$ optimization for symmetric matrix
+- $\lambda_2 = min_x \frac{x^TLx}{x^Tx}$
+- The meaning of $x^TLx$
+	- $x^TLx = \sum_{i, j = 1}^{n} L_{ij}x_jx_i = \sum_{i, j = 1}^{n} (D_{ij} - A_{ij})x_jx_i =\\ \sum_{i, j = 1}^{n} D_{ij}x_jx_i - \sum_{i, j = 1}^{n} A_{ij}x_jx_i = \\ \sum_{i= 1}^{n} D_{ii}x_i^2 - \sum_{(i, j) \in E(G)} 2x_jx_i = \\ \sum_{(i, j) \in E(G)} x_i^2 - 2x_jx_i + x_j^2 =\\ \sum_{(i, j) \in E(G)} (x_i - x_j)^2$
+- Property of $x$
+	- $x$ is an unit vector $\rightarrow \sum_{i} x_i^2 = 1$
+	- $x$ is orthogonal with 1st eigenvector $\rightarrow \sum_i x_i = 0$
+- Back to $\lambda_2 = min_x \frac{x^TLx}{x^Tx} = min_x \frac{\sum_{(i, j) \in E(G)} (x_i - x_j)^2}{\sum_i x_i^2} =$
+	- $\lambda_2 = min_x \sum_{(i, j) \in E(G)} (x_i - x_j)^2$
+		- $\sum_{(i, j) \in E(G)} (x_i - x_j)^2$ means we don't want to cross the group.
+		- $\sum_i x_i = 0$ means we need to balance this two group.
+- We can use $0$ or the median value of $x_i$ to split the group.
+
+# Algorithm
+- 1. Re-calculate the graph
+	- for each net $n$ with size $k$
+		- construct the $k$ -clique models with weight of $\frac{1}{k-1}$
+		- or we can use intersection graph.
+- 2. Build the Laplacian matrix $L$
+- 3. Compute the second smallest eigenvalue and eigenvector $x$ using [[Lanczos algorithm]].
+- 4. Sort $x$
+- 5. Use sorted $x$ to evaluate $n-1$ partitioning solutions
+	- $((v_1), (v_2, \dots, v_n))$
+	- $((v_1, v_2), (v_3, \dots, v_n))$
+	- and so on
+- 6. Calculate each partition's ratio cuts
+	- ratio cut $= \frac{c(X, Y)}{|X||Y|} = \frac{\text{cut size}}{\text{size of X} \times \text{size of Y}}$
+- 7. Choose partitioning with smallest ratio cut and balanced partition.

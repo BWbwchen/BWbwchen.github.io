@@ -1,0 +1,56 @@
+---
+title: "GORDIAN algorithm"
+description: |
+  Note for EDA placement algorithm - GORDIAN algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-23
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - placement
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- Use analytical method and linear programming [video](https://www.youtube.com/watch?v=mAXisjzajlw&list=PLZU5hLL_713x0_AV_rVbay0pWmED7992G&index=15)
+
+# Math
+- Goal is to minimize the total square of wire length
+	- the sum of square wire length between each moveable nodes(gates).
+	- the sum of square wire length between moveable nodes(gates) and fixed nodes(pin).
+- Objective function(minimize it)
+	- x axis : $\frac{1}{2}x^TLx + d_x^Tx$
+	- y axis : $\frac{1}{2}y^TLy + d_y^Ty$
+
+# Algorithm
+- Construct the k-clique graph for each net
+	- the weight will be $\frac{2}{k}$
+- Build the laplacian matrix and write down the objective function
+- iterative optimize it
+	- for the first time
+		- minimize without any constraint
+	- for the other time
+		- minimize with balance factor $\alpha$
+		- minimize objective function above and constraint
+			- center of gravity constraint
+			- the center of gravity of nodes in separated part should match the center of gravity constraint
+

@@ -1,0 +1,30 @@
+---
+title: "Software"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(distilltools)
+```
+
+## MapReduce
+An easy-to-use Map Reduce Go parallel computing framework.
+
+`r icon_link("github", "Code", "https://github.com/BWbwchen/MapReduce")`
+`r icon_link("file", "Document", "https://pkg.go.dev/github.com/BWbwchen/MapReduce")`
+
+
+## Game cheating detector
+Group of 5. Written in Python. An application that **detects whether players are cheating in the game by machine learning**. Won first prize out of 30 teams in a hackathon at NTHU.
+
+`r icon_link("github", "Code", "https://github.com/Logi-Meichu/Meichu2020_Team_726")`
+`r icon_link("globe", "News", "https://www.hccg.gov.tw/ch/home.jsp?id=48&parentpath=&mcustomize=municipalnews_view.jsp&toolsflag=Y&dataserno=202010250004&t=MunicipalNews&mserno=201601300020")`
+
+## Tiny URL service
+Written in Go. A scalable, high-performance URL-shortener and API service built with Redis, mongoDB and Zookeeper. Deployed on rancher kubernetes and CI/CD pipeline on self-hosted Gitlab.
+
+`r icon_link("github", "Code", "https://github.com/BWbwchen/tinyURL")`
+`r icon_link("medium", "Article", "https://medium.com/@tim.chenbw/lets-build-a-tinyurl-service-in-golang-47deb5a7904f")`
+

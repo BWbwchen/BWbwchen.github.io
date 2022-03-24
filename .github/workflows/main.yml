@@ -1,0 +1,42 @@
+name: Render & Deploy Site
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      RENV_PATHS_ROOT: ~/Library/Application Support/renv
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@master
+
+      - uses: r-lib/actions/setup-pandoc@master
+
+      - name: Cache packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+            
+      - name: Restore packages
+        run: |
+          github_token <- "${{ secrets.GITHUB_TOKEN }}"
+          install.packages(c("distill", "postcards", "devtools"))
+        shell: Rscript {0}
+          
+      - name: Render Site
+        run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
+        
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: _site # The folder the action should deploy.

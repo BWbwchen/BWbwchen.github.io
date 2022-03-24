@@ -1,0 +1,73 @@
+---
+title: "Rajaraman and Wong algorithm"
+description: |
+  Note for EDA cluster algorithm - Rajaraman and Wong algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-02-28
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - clustering
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Goal
+- Maximum delay from PI(primary input) to PO(primary output) is minimized
+
+# Assumption
+- DAG
+- each node has a unique delay
+- inter-cluster has constant delay
+- intra-cluster does not incur any delay
+
+# User constraint
+- Node delay
+- Edge delay
+- Cluster size limit
+
+# Labeling phase
+- Compute $\Delta(x, v)$ , which means the maximum delay from $x$ to $v$
+- Get a topological sort : $T$ (without PI)
+- $l$ is the delay.
+	- PI node : 1
+	- non-PI node initialize with 0
+- For each ordered node $v$ , construct graph $G_v$ , which contains all of the parent of $v$
+	- Compute $l_v(x)$ , $x \in G_v / {v}$
+		- $l_v(x) = l(x) + \Delta(x, v)$ ( the delay of path from PI to $x$ then to $v$ )
+	- Sort $l_v(x)$ in decreasing order: $S$
+	- Push the element one-by-one from $S$ to $cluster(v)$ **with cluster size limit**
+	- Computer $l_1$ (intra-cluster delay) and $l_2$ (inter-cluster delay).
+		- If $cluster(v)$ contains any PI nodes
+			- $l_1 = max(l_v(\forall PI \text{ } node))$
+		- If size of $S$ is bigger than cluster size limit
+			- $l_2 = max(l_v(\forall x) + D), x \in G_v / v$ , $D$ is inter-cluster delay.
+	- $l_v = max(l_1, l_2)$ (maximum delay of node $v$ **with cluster size limit**)
+
+# Clustering phase
+- Try to combine some cluster.
+- Put all PO nodes in a set $L$
+- Answer clusters will be in $S$
+- For each remove node $v$ from $L$
+	- Push $cluster(v)$ in to $S$
+	- $L = L \cup input \text{-} node(cluster(v))$ , where the node in $input \text{-} node(cluster(v))$ have not formed the cluster yet(not in the answer set $S$ yet).
+- Until $L$ empty.

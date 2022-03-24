@@ -1,0 +1,56 @@
+---
+title: "Fiduccia and Mattheyses algorithm (FM algorithm)
+"
+description: |
+  Note for EDA partitioning algorithm -  Fiduccia and Mattheyses algorithm (FM algorithm)
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-10
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - partitioning
+  - CAD
+---
+
+# Goal
+- Balanced bipartition.
+- divided the circuit into 2 equal-sized partitions.
+
+# Applied directly on hypergraph
+
+# Bucket data structure
+- Like bucket sort, we first prepare some bucket to boost the sorting process.
+- Bucket size
+	- from $max(\forall size(edge))$ to $-max(\forall size(edge))$
+
+# Iteratively move(each iteration is called "pass")
+- Randomly bipartitioning the graph $G$ with hyperedge
+- Do procedure on the **unmarked** vertex until no **unmarked** exist
+	- First compute the gain value for all node.
+		- $x \in P_1$
+		- $FS(x)$ is the number of nets that have $x$ as the only cell in $P_1$
+		- $TE(x)$ is the number of nets that contain $x$ and are entirely in $P_1$
+		- $gain(x) = FS(x) - TE(x)$
+	- move the vertex $x$ with maximum value of gain to the opposite under the area constraint, and then **mark** vertex $x$
+		- Use bucket to sort the maximum value.
+		- area constraint(after moving) : $|size(P_1) - size(P_2)| \leq 1$
+	- re-compute the gain value of the **unmarked** neighbor vertex of $x$ .
+	- Record the $gain(x, y)$ and the current cut size
+- If the initial cut size has reduced during the current "pass"
+	- Do the other "pass" on the best solution
+	- Otherwise, terminate.

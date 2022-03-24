@@ -1,0 +1,166 @@
+---
+title: "Raft
+"
+description: |
+  Paper note of Raft consensus algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-01-23
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - distributed system
+  - raft
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Goal
+- Solve split-brain by majority vote.
+- Leader election
+- Log replication
+- Safety
+- The stronger degree of coherency
+
+# 5 Property
+- Election safety: Only 1 leader.
+- Leader Append-Only : leader only append new entry in its log. (No delete its log).
+- Log Matching : identify log entry by (term number, log index).
+- Leader Completeness: if a log entry is committed in a given term, then it will appear in the leader's log.
+- State Machine Safety: If a machine has an *applied* log entry at index $t$ , then no other server will have a *applied* different entry at index $t$ .
+
+# Consensus Algorithm
+- Keeping the replicated log in replicated state machine consistent.
+- Once commands are properly replicated, each server’s state machine process them and make each server identical
+
+# Raft Basics
+- **Terms** (Time, clock)
+  ![https://i.imgur.com/zmWQF42.png](https://i.imgur.com/zmWQF42.png)
+	- When does the term end? #raft_problem
+		- 1. **A follower receives no communication over a period of time**(election timeout), and it begins an election to choose a new leader.
+
+	- Raft divides time into terms.
+	- Each term begins with an **election**.
+	- Act as a logical clock to distinguish which server is newer.
+	- **Use term number to detect inconsistencies.**
+- **State**
+  ![https://i.imgur.com/Rxqrl9I.png](https://i.imgur.com/Rxqrl9I.png)
+	- How to know the total number of the cluster? #raft_problem
+		- By configuration.
+- **RPCs Calls**
+	- RequestVote
+	- AppendEntries
+		- replicate log
+		- heartbeat message(append 0 entries)
+- **Log**
+  ![https://i.imgur.com/hV06ZG0.png](https://i.imgur.com/hV06ZG0.png)
+	- (Term number, Log index) can represent an unique log entry.
+	- A log entry is considered *committed* if it is **stored on majority of the servers** (safe for that entry to be applied to the state machine).
+		- Leader will decides when to apply the log entry command. #raft_problem
+
+# Leader election
+- 1. **A follower receives no communication over a period of time**(election timeout), and it begins an election to choose a new leader.
+
+	- heartbeat time << election timeout << infinity
+	- Raft paper use 10ms ~ 500ms.
+- 2. **increase its current term numbers** and **change the state to the candidate**.
+- 3. There are 3 cases:
+	- a. It wins the election
+		- it receives votes from **a majority of the servers, which with the same term**, in the cluster.
+		- How to vote? Vote for whom? → first-come-first-serve.
+		- It **became a leader and sends heartbeat** messages to all of the other servers.
+	- b. another server is a leader already.
+		- The leader’s term >= the candidate’s term → candidate **became a follower**.
+		- The leader’s term < the candidate’s term → candidate **rejects the leader and continues the election**.
+	- c. no winner(eg. split vote)
+		- **retry with a randomized election timeout.**
+- There are some restriction for leader election:
+	- Leader election restriction
+
+# Log replication
+- Leader receive the client request → append the command to leader's log → issue **AppendEntries** to all followers → leader applied the log and return.
+	- What if follower crash? #raft_problem
+		- leader retries the AppendEntries RPC **indefinitely**.
+- Consistency issue
+	- properties : (2 entries in different logs have :)
+		- 1. the same (term number, log index) → same entry command
+		- 2. the same (term number, log index) → all of the **preceding entries** are the same (**consistency check**)
+	- If the follower receive a log entry which doesn't have any matched (term number, log index) with follower's log, refuse to update, drop it.
+	- **Leader crash will lead to inconsistencies.**
+		- Committing entries from previous terms
+	- Solved by overwriting the followers' logs with leader's log.
+		- find the latest log entry where leader and follower agree → delete all the log entry after that entry → leader send the remain part.
+			- leader will maintain a nextIndex for each follower. If the *nextIndex* is different, the RPC failed. → leader decrease the nextIndex and try to match.
+				- nextIndex  = index of the next new log entry.
+					- (prevLogIndex, prevLogTerm)
+				- Initialize nextindex with leader's next new log entry index.
+
+# Safety
+- Each state machine should execute exactly same commands in the same order.
+- ## Leader election restriction
+	- Leader for any given term **contains the entire previous term committed log.**
+		- Ensure this property from the moment of election.
+	- When election, candidate request a RequestVote RPC.
+		- the voter will compare the (term number, index number)
+			- the candidate is **older** than voter → deny.
+			- the candidate is **more up-to-date** than voter → vote it.
+		- How to compare? #raft_problem
+			- Compare term first, new is better, then compare log index, new is better.
+- ## Committing entries from previous terms
+	- What if the leader crashes **during** committing an entry? What should new leader do? How to determine commitment?
+		- A log entry is considered *committed* if it is **stored on majority of the servers** (safe for that entry to be applied to the state machine).
+		- Only term 1 was committed. (c) shouldn't happen.
+		  ![https://i.imgur.com/wj6qpUx.png](https://i.imgur.com/wj6qpUx.png)
+		- **Only try to commit NOW new entry to the replicas, once we done this, all prior (un-)committed entry will be automatically committed.**
+	- Follower and candidate crashes
+		- Solved by overwriting the followers' logs with leader's log.
+
+# Dynamic member in the cluster (configuration change mechanism)
+- Each server has different timing to apply the new configuration.
+	- Can't directly change, caused it will have 2 leader in some cases.
+- ## Two-phase approach
+	- original configuration → old and new configuration (joint consensus) → new configuration
+	- In the joint consensus phase, old and new configuration work together to serve Raft service.
+- ## Problem
+	- New servers need a long time to initialize.
+		- New server will be in non-voting state until it caught up with the rest of the cluster. (by leader's snapshot Log Compaction (by snapshot) )
+	- The leader of joint consensus phase leader may not be part of the new configuration.
+		- leader step down to follower state. Wait for a new election.
+	- Removed server may disrupt the cluster by re-election.
+		- server disregard(ignore) RequestVote RPC during the minimum election timeout of hearing from the leader.
+
+# Log Compaction (by snapshot)
+- ![https://i.imgur.com/Q2THYci.png](https://i.imgur.com/Q2THYci.png)
+
+# Majority Vote
+- odd number of servers.
+	- If you have $2x + 1$ servers, then there can tolerant at most $x$ broken servers in order to run normally.
+
+# With Application
+- Record the client request
+```
+          Start(request) -> (log index, term numbers)
+```
+
+# Problem
+- Does the failure really frequently happen? #raft_problem
+	- Failure may not happened so frequently
+	- But slow follower will happen frequently.
+		- Could we mix the slow follower and failure up? #raft_problem

@@ -1,0 +1,74 @@
+---
+title: "FlowMap algorithm
+"
+description: |
+  Note for EDA cluster algorithm - FlowMap algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-01
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - clustering
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Goal
+- Translate the boolean network to K-input lookup table. (with input pin constraint)
+- For FPGA K-input lookup table.
+- The maximum delay from PI to PO is minimized.
+
+# Assumption
+- DAG
+- each node has a 0 delay
+- inter-cluster has unit delay
+- intra-cluster has 0 delay
+
+# User constraint
+- pin limit
+
+# Labeling phase
+- Get a topological sort : $T$ (without PI)
+- $l$ is the delay.
+	- each node has a 0 delay
+- For each ordered node $t$ , construct graph $N_t$ , which contains all of the parent of $t$ . then add a source node $S$ to $N_t$ and connect it to all PIs node.
+	- Compute $p = max(l(\forall \text{fan-in node of }t))$
+	- Construct $N_t '$ , where $l(v) = p, v \in N_t$ , $v$ will be collapsed into $t$ (同樣的 p值則縮點)
+	- Construct a flow-network $N_t''$ and duplicate the none- $s$ and none- $t$ node -> $(x, x'), e(x, x') = 1$ , the other edge are $\infty$
+	- Find the cut $C(X'', \bar{X''})$ with cut size(number of edge in this cut) $\leq$ pin constraint
+		- If found
+			- $cluster(t)$ or in the paper $\overline{X_t} = \text{collapsed node and t} \in N_t'$
+			- $l(t) = p$
+		- If not found
+			- $cluster(t)$ or in the paper $\overline{X_t} = t$
+			- $l(t) = p + 1$
+	- $l_v = max(l_1, l_2)$ (maximum delay of node $v$ **with cluster size limit**)
+
+# Mapping phase
+- Try to combine some cluster.
+- Put all PO nodes in a set $L$
+- Answer clusters will be in $S$
+- For each remove node $v$ from $L$
+	- Push $cluster(v)$ in to $S$
+	- $L = L \cup input \text{-} node(cluster(v))$ , where the node in $input \text{-} node(cluster(v))$ have not formed the cluster yet also not PI nodes(not in the answer set $S$ yet).
+- Until $L$ empty.
+
