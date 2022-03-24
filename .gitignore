@@ -1,1 +1,7 @@
 .DS_Store
+.gitignore
+.RData
+.Rhistory
+.Rproj.user/
+_site/
+distill.Rproj
