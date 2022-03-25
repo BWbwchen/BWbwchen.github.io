@@ -3,10 +3,15 @@ title: "Bo-Wei Chen"
 description: |
   Bo-Wei Chen's Blog
 
+favicon: favicon.ico
 base_url: https://BWbwchen.github.io/
 theme: theme.css
 output_dir: "docs"
 navbar:
+  logo:
+    image: favicon.png
+    href: https://BWbwchen.github.io/
+
   right:
     - text: "Home"
       href: index.html

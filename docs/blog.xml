@@ -6,6 +6,11 @@
     <atom:link href="https://BWbwchen.github.io/blog.xml" rel="self" type="application/rss+xml"/>
     <description>Bo-Wei Chen's Blog
 </description>
+    <image>
+      <title>Bo-Wei Chen</title>
+      <url>https://BWbwchen.github.io/favicon.ico</url>
+      <link>https://BWbwchen.github.io/</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate>
     <item>
