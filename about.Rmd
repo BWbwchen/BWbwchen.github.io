@@ -41,11 +41,18 @@ I am a master student major in Computer Science in National Tsing Hua University
   My undergraduate `r icon_link("file", "Research", "https://drive.google.com/file/d/1HpByl241IlU5HDt7_APYjcbWuynnbvOe/view?usp=sharing")` mainly focuses on CV (computer vision) and Person ReID(Person Re-identification). 
 
 
-## 💻 Experience
-* Internship as a software engineer at Logitech.
-* Won the [**FIRST PLACE**](https://www.hccg.gov.tw/ch/home.jsp?id=48&parentpath=&mcustomize=municipalnews_view.jsp&toolsflag=Y&dataserno=202010250004&t=MunicipalNews&mserno=201601300020) in [MeiChu Hackathon Competition 2020](https://github.com/Logi-Meichu/Meichu2020_Team_726)
-* Teaching Assistant in EECS205002 Linear Algebra (Instructor: Prof. Che-Rung Lee)
-* Undergraduate student of NTHU [VSLab](https://aliensunmin.github.io/lab/info.html) (Instructor: Prof. Min Sun)
+## 💻 Work Experience
+### Software Engineer Intern at [Logitech](https://www.logitech.com/)
+
+<aside>Jul. 2021 - Aug. 2021 $\cdot$ Hsinchu, Taiwan</aside>
+  * Refactored and optimized the keyboard ghost key test tool with Python.
+  * Reduced 86.9% of execution time by paralleling the program and pruning.
+
+### Part-time Backend Engineer at Uniiqc
+
+<aside>Mar. 2021 – Apr. 2021 $\cdot$ Taipei, Taiwan</aside>
+  * Designed a RESTful B2B API and Database architecture. Implemented in Go.
+  * Launched the service on the GCP app engine.
 
 ## 📝 Selected Projects
 * [MapReduce](https://github.com/BWbwchen/MapReduce)
