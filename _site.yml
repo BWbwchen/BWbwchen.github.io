@@ -3,7 +3,7 @@ title: "Bo-Wei Chen"
 description: |
   Bo-Wei Chen's Blog
 
-favicon: favicon.ico
+favicon: favicon.png
 base_url: https://BWbwchen.github.io/
 theme: theme.css
 output_dir: "docs"
@@ -31,7 +31,7 @@ output:
     includes:
       in_header: giscus.html
 
-include: ["_footer.html"]
+include: ["_footer.html", "favicon.png"]
 exclude: ["docs.txt", "*.csv", "Makefile"]
 
 collections:
