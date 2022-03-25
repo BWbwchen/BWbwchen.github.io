@@ -5,7 +5,7 @@ description: |
 
 base_url: https://BWbwchen.github.io/
 theme: theme.css
-output_dir: "_site"
+output_dir: "docs"
 navbar:
   right:
     - text: "Home"
