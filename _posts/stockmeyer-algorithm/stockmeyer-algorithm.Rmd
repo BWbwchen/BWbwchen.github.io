@@ -1,0 +1,73 @@
+---
+title: "Stockmeyer algorithm
+"
+description: |
+  Note for EDA floorplanning algorithm - Stockmeyer algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-15
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - floorplanning
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Goal
+- Given a slicing tree, output the minimum size of floor planning.
+- ![https://i.imgur.com/hSRkOea.png](https://i.imgur.com/hSRkOea.png)
+
+# Idea
+- For 2 child with dimension $(h_l, w_l)$ and $(h_r, w_r)$
+- For vertical node(eg. 1, 5 in the figure above)
+	- $D = (width_1 + width_2, max(height_1, height_2))$
+- For horizontal node(eg. 2, 8 in the figure above)
+	- $D = (max(width_1, width_2), height_1 + height_2)$
+
+# Algorithm
+- Objective
+	- Left child with dimension $(h_l, w_l)$
+	- Right child with dimension $(h_r, w_r)$
+	- List $L = \{(h_l, w_l), (w_l, h_l)\}$ sort by the first or second element.
+	- List $R = \{(h_l, w_l), (w_l, h_l)\}$ sort by the first or second element.
+- For vertical node
+	- $L, R$ sort by the first element
+	- Like merge two sorted list
+		- $l = l_1, r = r_1$
+		- if $l.second > r.second$ , then $l = l_{next}$
+		- if $l.second < r.second$ , then $r = r_{next}$
+		- if $l.second = r.second$ , then $l = l_{next}, r = r_{next}$
+	- It will generate a dimension list $D$ contain multiple dimension combination.
+	- With $D = (width_1 + width_2, max(height_1, height_2))$
+- For horizontal node
+	- Like above, but with $D = (max(width_1, width_2), height_1 + height_2)$
+	- Like merge two sorted list
+		- $l = l_1, r = r_1$
+		- if $l.first > r.first$ , then $l = l_{next}$
+		- if $l.first < r.first$ , then $r = r_{next}$
+		- if $l.first = r.first$ , then $l = l_{next}, r = r_{next}$
+- Now we know the total floor planning area by bottom-up the slicing tree.
+- To get the location of each node in the slicing tree, traverse the slicing tree top-down.
+
+# Problem
+- How to generate the initial slicing tree input?

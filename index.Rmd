@@ -1,0 +1,21 @@
+---
+title: "Bo-Wei Chen, Tim"
+site: distill::distill_website
+image: https://avatars.githubusercontent.com/u/44916048?v=4
+links:
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: "https://github.com/BWbwchen"
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
+    url: "https://www.linkedin.com/in/bo-wei-chen/"
+  - label: '<i class="fas fa-file"></i> Resume'
+    url: "https://drive.google.com/file/d/1t8FV8S4jzDyio3ZeNEqPZfboJH8evSoM/view?usp=sharing"
+  - label: '<i class="fas fa-envelope"></i> Email'
+    url: "mailto:tim.chenbw@gmail.com"
+base_url: https://BWbwchen.github.io
+output:
+  postcards::jolla
+---
+
+Hi! <span class="wave">👋</span> I am a master student major in Computer Science in National Tsing Hua University. 
+
+I study physical design in EDA and I love Long-distance running.

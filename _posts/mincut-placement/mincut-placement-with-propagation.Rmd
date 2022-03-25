@@ -1,0 +1,44 @@
+---
+title: "Mincut placement with propagation
+"
+description: |
+  Note for EDA placement algorithm - Mincut placement with propagation
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-20
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - placement
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Mincut placement
+- Repeatedly split the circuit into sub-circuits by [[Partitioning]] algorithm.
+- Until each partition only occupied by a single gates (or sometimes special sub-circuits).
+
+# Terminal propagation
+- During the first partition, there are some cases that two gate $x$ and $y$ is in the adjacent block.(wire length = 1)
+- But at the second partition, we tried to partition the block of $x$ and make $x$ away from $y$ (wire length = 2)
+- We need to connect the $x$ and $y$ to prevent the additional wire length.
+- ![https://i.imgur.com/1oIpQof.png](https://i.imgur.com/1oIpQof.png)
+	- $m$ and $i$ should be in the same partition and at the left most side, otherwise we need more wire length.

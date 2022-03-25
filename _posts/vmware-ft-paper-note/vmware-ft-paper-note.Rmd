@@ -1,0 +1,88 @@
+---
+title: "VMware FT paper note"
+description: |
+  Paper note of VMware FT
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2021-12-21
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - distributed system
+  - VMware FT
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# VMware FT
+
+# Goal
+
+- Use Replication to achieve Fault-tolerance.
+
+# Constraint
+
+- Cannot fix the software bug.
+
+# Replication
+
+1. They all copy their own state, but the definition of the state is different.
+
+## State Transfer
+
+- Primary backup its own state(***memory, data***), and send them to the backup server. If the primary is fail-stop, we can use the backup server instead.
+
+## Replicated State Machine
+
+- Primary backup its own state(***command***), and send them to the backup server. If the primary is fail-stop, we can use the backup server instead.
+
+# VMWare FT
+
+1. It replica all the things, including RAM, register...etc. But GFS will only replica application-level data, such as chunks.
+2. **Use disk server as the local disk.**
+3. Use log channel for backup server to sync the primary log event. (eg, sync generating random numbers, etc.)
+
+# Non-Deterministic Events
+
+- The time of the interrupt.
+    - Normally, the input in this system is a network package, while the DMA of the network card receives a package, it will copy the content into memory, and trigger an interrupt, which could differ in time.
+    - Solution: Bounce Buffer. When a package is received. VMM will stop the primary, and copy the package content into the primary memory and trigger an interrupt of the primary’s network card and then memorize the id of the now instruction. It does something to the backup server and makes an interrupt at the id of the instruction of the primary interrupt instruction.
+- Weird instructions
+    - eg. use system time.
+- Multi-process(didn’t be mentioned in this paper, this paper is only for single-core processor)
+    - It’s unpredictable for the order of the instruction execution on multi-process.
+
+# Output Rule
+
+The output of the primary will be sent by a simulated network card, and the output of the backup server will be discarded.
+
+- What if the network between primary and backup server crash and the primary dead? The values in backup and primary are different.
+    - When the backup server receives the primary log(input) first, then send output to the outside client.
+    - Bottleneck here, since the primary need to sync and wait for the backup server.
+    - (What if) input into primary, but output from backup?
+- What if the response had been sent to the client, but primary crash. But the original request hasn’t been executed by the backup server?
+    - When the service switch to the backup server, it will wait until the backup server consumes all the buffered request and have the same state as the original primary then it will start to take over the duty.
+        - Duplicate output?
+        - Nope, since the output package will have the same information as the primary output package, it will be filtered out at the TCP level.
+
+# Test-and-Set
+
+- What if the network between the primary and backup servers was broken, but the primary and backup servers were all healthy? They all think that the other is dead so it needs to take over for the duty.
+    - Call the third party service(test-and-set service) to decide, whether use the primary or backup server.
+    - Whenever we need to change the primary, we need to connect with the test-and-set service first to decide whether we could switch or not. It’s like a ***lock***.

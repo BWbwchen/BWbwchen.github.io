@@ -1,0 +1,71 @@
+---
+title: "ILP floorplanning algorithm
+"
+description: |
+  Note for EDA floorplanning algorithm - ILP floorplanning algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-17
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - floorplanning
+  - CAD
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Goal
+- Given some module with width and height, and some constraint(eg. rotation or not .etc), output the minimize(eg. area .etc) floorplanning.
+- Suitable for fixed and flexible module.
+
+# Idea
+- There are so many constraint(eg. module size, rotation or not .etc) and one objective function(minimize floorplanning) to optimize.
+- Use Integer Linear programming to solve it!!
+	- Only consider the integer solution by branch and bound. [video](https://www.youtube.com/watch?v=upcsrgqdeNQ)
+
+# Algorithm
+- Objective function: minimize $y^*$ , it is the width of total chip size(square chip here).
+- Use $(x_{ij}, y_{ij})$ pair to define the location relationship of module $i$ and $j$ .
+- Use $z_i$ to mark rotation or not. $z_i = 0$ mean we will NOT rotation the module $i$ .
+- ## Non-overlapping constraint
+	- Write down each pair of module and avoid the overlapping. Below is one of the example.
+	- ![https://i.imgur.com/9L8NHiu.png](https://i.imgur.com/9L8NHiu.png)
+- ## Variable constraint
+	- Size of module should positive.
+	- relationship variable should be binary.
+	- ![https://i.imgur.com/93MLLUv.png](https://i.imgur.com/93MLLUv.png)
+- ## Chip width constraint
+	- ![https://i.imgur.com/SzhgJqW.png](https://i.imgur.com/SzhgJqW.png)
+- ## Chip height constraint
+	- ![https://i.imgur.com/biWfRE0.png](https://i.imgur.com/biWfRE0.png)
+
+# For flexible module
+- Constraint style is same as above.
+- Since the width and height of flexible module can be changed, only area and aspect ratio is given, We want to obtain the **Linear** relationship between height and width.
+	- Use [Taylor expansion](https://www.wikiwand.com/en/Taylor_series#/Definition)!
+	- $hw = S$ , $S$ is the area.
+	- $h = \frac{S}{w} = \frac{S}{w_{max}} + (w_{max} - w)\frac{S}{w_{max}^2} + \dots$
+		- Use more term can obtain more accuracy.
+
+# Problem
+- For flexible module, we use taylor expansion to approximate the relationship between width and height.
+	- Since it is approximate value, we will have some error value there.
+	- Solution: Use more term to get high quality answer.

@@ -1,0 +1,129 @@
+---
+title: "API gateway for microservice with Kong"
+description: |
+  API gateway with Kong
+
+date: 2021-08-27
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - microservice
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+I have implemented a JWT microservice. But I need an API gateway to redirect the outside HTTP request to the inner network. We need a server to receive an HTTP request and then redirect to the corresponding microservice. How do we know the actual IP address in our network? One is to hard-code the IP address in the API gateway. You can also use service discovery to register your microservice IP address. So you can dynamically start service or shutdown service. In this tutorial, I use consul as my service discovery registry.
+
+# Service discovery
+Let’s talk about service discovery first. There are 2 types of service discovery. One is client-side, another is server-side. Client-side means you get the actual IP address of a microservice from the service discovery registry first, then use that IP address to access the microservice. Server-side means you send a request to the service discovery registry, and it will help you to query the corresponding microservice then send back the microservice response to you.
+
+# Code
+I use consul as service registry and Kong as API gateway and use docker-compose to set up my docker containers.
+### docker-compose.yml
+```yml
+version: "3.5"
+services:
+  jwt_service:
+    container_name: jwt_service
+    build :
+      context : ./jwt
+      target: deploy 
+    environment:
+      SECRETKEY: asdf
+      localIP: 192.168.18.5
+      PORT: 8087
+      consul_url: consul:8500
+    networks:
+      net:
+        ipv4_address: 192.168.18.5
+    expose :
+      - 8087
+    depends_on:
+      - consul
+
+  consul :
+    container_name : consul
+    image: consul
+    networks:
+      net:
+        ipv4_address: 192.168.18.4
+    expose:
+      - 8500
+      - 8600/udp
+    ports:
+      - "8700:8500"
+
+  kong:
+    image: kong:latest
+    volumes: 
+      - ./kong.yml:/usr/local/kong/declarative/kong.yml
+    environment:
+      - KONG_DATABASE=off
+      - KONG_DECLARATIVE_CONFIG=/usr/local/kong/declarative/kong.yml
+      - KONG_PROXY_ACCESS_LOG=/dev/stdout
+      - KONG_ADMIN_ACCESS_LOG=/dev/stdout
+      - KONG_PROXY_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl
+      - KONG_DNS_RESOLVER=192.168.18.4:8600
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+      - "127.0.0.1:8001:8001"
+      - "127.0.0.1:8444:8444"
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.18.0/24
+          gateway: 192.168.18.1
+```
+We need to edit the config file for the Kong API gateway. I set the DNS resolver to the consul. I use the docker bridge network to assign a static IP directly to each microservice container. If we didn’t assign a static IP, we use the service name to represent the IP address of each container. When we access that IP, we will get the actual IP of that container from docker. You can think that we use docker as a DNS resolver. But we use consul as DNS resolver! So it won’t know what is the actual IP address of the service name. Make sure to assign a static IP to microservice! This is how I make it. If you have another good method to do it, please tell me!
+
+### kong.yml
+```yml
+_format_version: "2.1"
+
+_transform: false
+
+services:
+  - name: jwt-service
+    url: http://jwt_service.service.dc1.consul
+    routes:
+      - name: jwt-route
+        paths: 
+          - /jwt
+```
+We set the URL to the service name that we register to the consul.
+
+Then I can access my microservice with path /jwt !
+
+---
+If you have any problems, feel free to ask me!
+
+You can find me here 👉 tim.chenbw@gmail.com
+
+Subscribe to my substack here! 👉 [subscribe me on substack !](https://bwbwchen.substack.com/?r=df7p0&utm_campaign=pub&utm_medium=web&utm_source=copy) 

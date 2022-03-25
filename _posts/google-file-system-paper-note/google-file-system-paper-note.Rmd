@@ -1,0 +1,136 @@
+---
+title: "Google File System paper note"
+description: |
+  Paper note of Google File System
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2021-12-20
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - distributed system
+  - gfs
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# GFS
+
+# Goal
+
+- 全局通用的儲存系統
+- 高容量高速→ 需要 sharding
+- 自動修復
+- **大量**順序讀取，record append
+
+# Constraint
+
+- 在一個 data center.
+- 可以允許一點點的錯誤
+- only guarantees that the data is written at least once as an atomic unit. → If writing success, data must have been written at the same offset on all replicas of some chunk.
+
+# Architecture
+
+- 單一 master node, 多個 chunk server
+
+## Master Node
+
+- 管理文件與 chunk info (file → chunk IDs)
+    - Use read-write lock → concurrent mutation in the same directory.
+    - 
+- 儲存：（**要存在硬碟**，不用存在硬碟）
+    - file → **Chunk handlers**
+    - Chunk handlers → Chunk Data
+        - 每個 chunk 在哪個 chunk server 上
+        - Chunk **version number**
+        - 主 chunk 在哪個 chunk server （因為寫入必須要在主 chunk）
+        - 主 chunk expiration time.
+- 使用 log 紀錄每一次的操作
+
+## Chunk Server
+
+- 儲存實際 data
+- 64MB 為一個 chunk 並依照 chunk id 作為 filename 存成一個檔案
+
+# Tech
+
+## 讀
+
+![gfs_read](/img/gfs_read.png#center)
+
+1. client 發出請求讀 file, offset 
+2. master 得知該 file 的 chunk id list，透過 offset / 64 得到對應的 chunk id
+3. master 將該 chunk id 所在的 chunk server id list 與 chunk id(handle) 傳回給 client.
+    
+    ---
+    
+4. client 從 chunk server id list(cache this!) 挑一個獲取 data
+5. client 將 chunk handle(id), byte range 交給 chunk server 
+6. chunk server 將對應的 chunk id file with byte range 讀出交給 client
+
+## 寫
+
+![gfs_write.png](/img/gfs_write.png#center)
+
+### Record Append (追加在文件最後面)
+
+- 只能對 主 chunk (Primary Chunk) 來寫入
+    - But, What if the primary chunk doesn't exist?
+    - find the up-to-date chunk replicas. (By the version number!!) → (Not found? Crash)
+    - The other will be the secondary chunk
+    - Notify the primary and secondary servers of their roles and new version numbers. *[The data in the primary and secondary servers are up-to-date??] [primary will notify the **offset** so if it is not up-to-date, it will leave a hole.]*
+    - Giving the expiration time for the primary. (prevent multiple primary servers, split-brain!!)
+    - Increase the chunk version number
+- If the master wants to change the primary server, it can wait until the primary is expired. (Not communication needed!)
+- If the writing data is too large, break it down into multiple write operations.
+    
+    
+1. Client 提供 filename 並要求追加內容→ master
+2. Master → the server which contains the primary chunk (Primary server)
+3. The client sends the data to the primary and secondary servers, and the server will save them in a temporary place. After the primary and secondary server receives the data → "Receive the data!" to Client
+    1. The primary will check whether need a new chunk.
+    2. Optimization: Send the data to the nearest server, and propagate it to the other server.
+4. Client "Append record now!" → Primary write the data and notify the secondary server to write data.
+5. the secondary will return the status to the primary server, "yes" or "no". 
+    1. All "yes" → "Done" to Client.
+    2. else → "Fail" to Client. The client should start from 1.
+        1. But!! The chunk server will Not recover the original data!
+
+## Garbage Collection
+
+1. Rename the filename into a hidden name with a deletion timestamp.
+2. During the master’s regular scan, it removes the file and metadata.
+
+## Error Handle
+
+## Data Consistent
+
+- 不同 chunk server 的 data 可能會略有不同！
+- The primary will notify the offset so if it is not up-to-date, it will leave a hole.
+    - The client needs to tolerant the out-of-order data order.
+
+### If you want to make it a 強一致性 :
+
+1. Detect the repeated request. whether this request is retry.
+2. Primary - secondary should be a two-phase commit.
+
+# Problem
+
+1. Out of RAM of the master node.
+2. Too many requests for a single master node.

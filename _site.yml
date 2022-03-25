@@ -1,0 +1,37 @@
+name: "Bo-Wei Chen"
+title: "Bo-Wei Chen"
+description: |
+  Bo-Wei Chen's Blog
+
+base_url: https://BWbwchen.github.io/
+theme: theme.css
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Blog"
+      href: blog.html
+    - text: "Software"
+      href: software.html
+    - text: "About"
+      href: about.html
+    - icon: fab fa-github
+      href: https://github.com/BWbwchen
+    - icon: fab fa-linkedin
+      href: https://www.linkedin.com/in/bo-wei-chen/
+      
+output: 
+  distill::distill_article:
+    includes:
+      in_header: giscus.html
+
+include: ["_footer.html"]
+exclude: ["docs.txt", "*.csv", "Makefile"]
+
+collections:
+  posts:
+    categories: true
+    #disqus: bo-wei-chen
+    share: [twitter, linkedin, facebook, pinterest]
+    citations: true
