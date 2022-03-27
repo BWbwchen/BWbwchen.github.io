@@ -23,6 +23,8 @@ editor_options:
 categories:
   - distributed system
   - gfs
+preview: https://cdn.pixabay.com/photo/2019/11/19/07/18/network-4636686_960_720.jpg
+
 ---
 
 

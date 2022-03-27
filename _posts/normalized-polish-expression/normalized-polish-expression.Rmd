@@ -6,7 +6,7 @@ description: |
 author:
   - name: Bo-Wei Chen
     url: https://BWbwchen.github.io/
-date: 2022-03-01
+date: 2022-03-16
 output:
   distill::distill_article:
     toc: true
@@ -24,6 +24,7 @@ categories:
   - EDA
   - floorplanning
   - CAD
+preview: https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg
 ---
 
 

@@ -23,6 +23,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/gordian-algorithm</guid>
       <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Mincut placement with propagation </title>
@@ -34,6 +35,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/mincut-placement</guid>
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>ILP floorplanning algorithm </title>
@@ -45,6 +47,19 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/ilp-floorplanning-algorithm</guid>
       <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Normalized Polish Expression </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/posts/normalized-polish-expression</link>
+      <description>Note for EDA floorplanning algorithm - Normalized Polish Expression</description>
+      <category>EDA</category>
+      <category>floorplanning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/posts/normalized-polish-expression</guid>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Stockmeyer algorithm </title>
@@ -56,6 +71,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/stockmeyer-algorithm</guid>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>FBB algorithm </title>
@@ -67,6 +83,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/fbb-algorithm</guid>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>EIG algorithm</title>
@@ -78,6 +95,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/eig-algorithm</guid>
       <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Fiduccia and Mattheyses algorithm (FM algorithm) </title>
@@ -89,6 +107,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/fm-algorithm</guid>
       <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Kernighan and Lin algorithm (KL algorithm)</title>
@@ -96,10 +115,11 @@
       <link>https://BWbwchen.github.io/posts/kl-algorithm</link>
       <description>Note for EDA partitioning algorithm - Kernighan and Lin algorithm (KL algorithm)</description>
       <category>EDA</category>
-      <category>clustering</category>
+      <category>partitioning</category>
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/kl-algorithm</guid>
       <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>FlowMap algorithm </title>
@@ -111,17 +131,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/flowmap-algorithm</guid>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Normalized Polish Expression </title>
-      <dc:creator>Bo-Wei Chen</dc:creator>
-      <link>https://BWbwchen.github.io/posts/normalized-polish-expression</link>
-      <description>Note for EDA floorplanning algorithm - Normalized Polish Expression</description>
-      <category>EDA</category>
-      <category>floorplanning</category>
-      <category>CAD</category>
-      <guid>https://BWbwchen.github.io/posts/normalized-polish-expression</guid>
-      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Rajaraman and Wong algorithm</title>
@@ -133,6 +143,7 @@
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/posts/rajaraman-and-wong-algorithm</guid>
       <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Raft </title>
@@ -143,6 +154,7 @@
       <category>raft</category>
       <guid>https://BWbwchen.github.io/posts/raft</guid>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2019/11/19/07/18/network-4636686_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>VMware FT paper note</title>
@@ -153,6 +165,7 @@
       <category>VMware FT</category>
       <guid>https://BWbwchen.github.io/posts/vmware-ft-paper-note</guid>
       <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2019/11/19/07/18/network-4636686_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Google File System paper note</title>
@@ -163,6 +176,7 @@
       <category>gfs</category>
       <guid>https://BWbwchen.github.io/posts/google-file-system-paper-note</guid>
       <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2019/11/19/07/18/network-4636686_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>API gateway for microservice with Kong</title>
@@ -172,6 +186,7 @@
       <category>microservice</category>
       <guid>https://BWbwchen.github.io/posts/api-gateway-for-microservice-with-kong</guid>
       <pubDate>Fri, 27 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2015/10/31/11/58/call-center-1015274_960_720.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Tinyurl</title>

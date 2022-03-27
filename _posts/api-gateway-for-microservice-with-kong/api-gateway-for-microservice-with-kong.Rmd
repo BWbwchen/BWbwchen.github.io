@@ -23,6 +23,7 @@ editor_options:
     wrap: 72
 categories:
   - microservice
+preview: https://cdn.pixabay.com/photo/2015/10/31/11/58/call-center-1015274_960_720.jpg
 ---
 
 

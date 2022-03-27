@@ -25,6 +25,7 @@ categories:
   - EDA
   - clustering
   - CAD
+preview: https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg
 ---
 
 
