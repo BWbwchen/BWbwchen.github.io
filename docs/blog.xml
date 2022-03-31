@@ -12,7 +12,29 @@
       <link>https://BWbwchen.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Simulate Annealing algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/posts/simulate-annealing-algorithm</link>
+      <description>Introduction to simulate annealing algorithm</description>
+      <category>convex optimization</category>
+      <guid>https://BWbwchen.github.io/posts/simulate-annealing-algorithm</guid>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2021/10/07/16/28/challenge-6689107_960_720.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>TimberWolf algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/posts/timberwolf-algorithm</link>
+      <description>Note for EDA placement algorithm - TimberWolf algorithm</description>
+      <category>EDA</category>
+      <category>placement</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/posts/timberwolf-algorithm</guid>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>GORDIAN algorithm</title>
       <dc:creator>Bo-Wei Chen</dc:creator>

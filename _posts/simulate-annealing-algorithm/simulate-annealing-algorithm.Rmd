@@ -1,0 +1,61 @@
+---
+title: "Simulate Annealing algorithm"
+description: |
+  Introduction to simulate annealing algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-03-31
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - convex optimization
+preview: https://cdn.pixabay.com/photo/2021/10/07/16/28/challenge-6689107_960_720.png
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- For function $h$
+- Good at find a global optimum by jumping out of local optimum
+
+# Idea
+- Higher temperature will have higher momentum
+- Lower temperature will have lower momentum and lower potential energy
+- You will jump with big gap at high temperature and little gap at low temperature
+
+# Algorithm (Find the maximum)
+- $x$ is start point
+- $T_1$ is start temperature
+- For $i$ in 1 to N (Number of iteration) or $T_{max}$ to $T_{min}$
+	- Sample a $\xi$ from normal distribution or other distribution
+	- The proposal solution is $x' = x \pm \xi$
+	- Decide that whether we accept the proposal
+		- $\Delta h = h(x') - h(x)$
+		- if the delta value is positive for maximize
+			- accept the good change
+		- Try to accept the bad change ( $\Delta h < 0$ )
+			- Calculate probability $p = exp(\Delta h / T_i)$
+				- $p$ is high when $T$ is high
+				- bad $\Delta h$ (very negative) will have low $p$
+			- If $p > rand(0,1)$
+				- accept, $x = x'$
+			- else $x = x$
+	- Update the $T$ with your own method
+		- $T$ - -
+		- $T = \alpha T, 0 < \alpha < 1$
