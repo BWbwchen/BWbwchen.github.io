@@ -32,6 +32,8 @@ preview: https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+For the talk slide: [link](https://drive.google.com/file/d/1WLlxY_T14-YrKH2Hkzr0x-tpA_oIY9Fl/view?usp=sharing)
+
 # Goal
 - Maximum delay from PI(primary input) to PO(primary output) is minimized
 

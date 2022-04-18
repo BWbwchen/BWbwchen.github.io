@@ -19,6 +19,8 @@ navbar:
       href: blog.html
     - text: "Software"
       href: software.html
+    - text: "Talk"
+      href: talk.html
     - text: "About"
       href: about.html
     - icon: fab fa-github

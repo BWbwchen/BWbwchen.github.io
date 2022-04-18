@@ -1,0 +1,14 @@
+---
+title: "Talk"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(distilltools)
+```
+
+Talks that I gave in my lab group meeting.
+
+1. [Rajaraman and Wong algorithm](https://drive.google.com/file/d/1WLlxY_T14-YrKH2Hkzr0x-tpA_oIY9Fl/view?usp=sharing)
