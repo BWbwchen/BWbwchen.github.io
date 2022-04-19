@@ -1,0 +1,21 @@
+---
+title: "Writing"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(distilltools)
+```
+
+## Talk slides
+
+Slides that I used in my lab group meeting.
+
+1. [Rajaraman and Wong algorithm](https://drive.google.com/file/d/1WLlxY_T14-YrKH2Hkzr0x-tpA_oIY9Fl/view?usp=sharing)
+
+
+## Notes
+
+1. [Applied cryptography](https://drive.google.com/file/d/1g2lfVR80Suc3jLSo6BUC6iTbeF3YN7RM/view?usp=sharing)
