@@ -1,0 +1,63 @@
+---
+title: "1-Steiner Routing Algorithm"
+description: |
+  Note for EDA routing algorithm - 1-Steiner Routing Algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+date: 2022-04-21
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - routing
+  - CAD
+preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+- Given a MST with point set $P$ , denoted $MST(P)$ .
+- Find one additional Steiner point $s$ so that the wire length of $MST(P \cup s)$ is shorter than $MST(P)$ .
+
+## Naive method
+- Find all possible 1-steiner points $P$ by [Hanan grid](https://www.wikiwand.com/en/Hanan_grid)
+- For each 1-steiner points $s \in P$ , construct $MST(P \cup s)$ .
+	- Find the MST with shortest wirelength.
+- repeat above until no improvement.
+
+## Heuristic method
+- Use $\textrm{gain}$ to decide where to add steiner point.
+- ![picture from book practical problems in VLSI physical design automation](https://i.imgur.com/CSV7xxH.png)
+- $\textrm{gain}(p, e) = \textrm{length}(e_2) - \textrm{length}(p, p_1)$
+	- $p \in P$ , $e \in MST(P)$
+	- $e_2$ is the longest edge from $p$ to edge $e$ .
+	- $p_1$ is the steiner point on hanan grid.
+- for each edge $e \in MST(P)$
+	- Find the largest $\textrm{gain}$ value
+	- Sort descending as $E$ .
+- for each $g \in E$
+	- $g = \textrm{gain}(p, e)$
+	- remove corresponding $e_2$ , and connect $p$ and $p_1$ .
+	- If edge $e$ were removed by previous operation, just skip it.
+- repeat above until no improvement.
+
+
+
+

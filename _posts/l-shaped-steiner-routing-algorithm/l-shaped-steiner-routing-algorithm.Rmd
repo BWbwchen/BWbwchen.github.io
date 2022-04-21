@@ -6,7 +6,7 @@ description: |
 author:
   - name: Bo-Wei Chen
     url: https://BWbwchen.github.io/
-date: 2022-04-21
+
 output:
   distill::distill_article:
     toc: true
@@ -16,6 +16,7 @@ output:
     collapsed: false
     smooth_scroll: true
 draft: false
+date: 2022-04-21
 creative_commons: CC BY
 editor_options: 
   markdown: 
