@@ -1,5 +1,26 @@
 [
   {
+    "path": "posts/l-shaped-steiner-routing-algorithm/",
+    "title": "L-shaped Steiner Routing Algorithm",
+    "description": "Note for EDA routing algorithm - L-shaped Steiner Routing Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-04-21",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nPrerequisite\nGoal\nAlgorithm\nConstruct minimum\nspanning tree\nDetermine\nthe shape of each edge(upper L or lower L) by DP in bottom-up\nfashion\nBrute force all possible\ncase\nVisit\nthe tree in top-down fashion to construct the steiner tree\n\n\nsolve the RST (Rectilinear Steiner Tree) problem by constructing a\nR-MST (Rectilinear Minimum Spanning Tree) and refine it.\nPrerequisite\n\\(cost(\\forall RMST) \\leq\n1.5cost(\\text{optimal } RST)\\)\nUse prim or kruskal algorithm to construct the minimum spanning\ntree.\nGoal\nMaximize the number of overlapping edges.\nAlgorithm\nhttps://i.imgur.com/f1FDkYj.pngConstruct minimum spanning\ntree\n\\(\\textrm{weight}(i, j) = (D(i, j), -|y(i)\n- y(j)|, -\\max\\{x(i), x(j)\\})\\)\nWe want to find the shortest edges, larger vertical distance and\nrightmost vertices.\nDetermine\nthe shape of each edge(upper L or lower L) by DP in bottom-up\nfashion\nCalculate \\(\\Phi_\\ell(v)\\) and\n\\(\\Phi_u(v)\\)\n\\(\\Phi_\\ell(v)\\) means the number\nof overlapping edge when \\(e_v\\) is\nlower L.\n\\(\\Phi_u(v)\\) means the number of\noverlapping edge when \\(e_v\\) is upper\nL.\nBrute force all possible\ncase\n\\(\\Phi_{\\ell \\text{ or } u}(v) = \\max(Z_1\n+ Z_2)\\)\n\\(Z_1 =\\) overlap in all of edges\nincident to \\(v\\)\nCalculate the overlapping of \\(e_v\\) with all the combinations of the\nchildren of \\(v\\) (lower or upper\nL)\n\n\\(Z_2 =\\) overlap in the children\nof \\(v\\)\nSum up the corresponding combination’s \\(\\Phi_\\ell(k)\\) or \\(\\Phi_u(k)\\) , \\(k\\) is the children of \\(v\\)\n\n\nVisit\nthe tree in top-down fashion to construct the steiner tree\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-04-21T14:21:05+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/simulate-annealing-algorithm/",
     "title": "Simulate Annealing algorithm",
     "description": "Introduction to simulate annealing algorithm",
