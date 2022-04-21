@@ -9,6 +9,10 @@
     <lastmod>2022-03-25T08:55:57+08:00</lastmod>
   </url>
   <url>
+    <loc>https://BWbwchen.github.io/eda.html</loc>
+    <lastmod>2022-04-21T21:56:34+08:00</lastmod>
+  </url>
+  <url>
     <loc>https://BWbwchen.github.io/</loc>
     <lastmod>2022-03-25T22:49:25+08:00</lastmod>
   </url>
@@ -21,64 +25,8 @@
     <lastmod>2022-04-19T09:23:57+08:00</lastmod>
   </url>
   <url>
-    <loc>https://BWbwchen.github.io/posts/1-steiner-routing-algorithm/</loc>
-    <lastmod>2022-04-21T21:48:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/l-shaped-steiner-routing-algorithm/</loc>
-    <lastmod>2022-04-21T21:48:48+08:00</lastmod>
-  </url>
-  <url>
     <loc>https://BWbwchen.github.io/posts/simulate-annealing-algorithm/</loc>
     <lastmod>2022-03-31T16:17:29+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/timberwolf-algorithm/</loc>
-    <lastmod>2022-03-31T17:06:47+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/gordian-algorithm/</loc>
-    <lastmod>2022-03-27T23:05:16+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/mincut-placement/</loc>
-    <lastmod>2022-03-27T23:05:20+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/ilp-floorplanning-algorithm/</loc>
-    <lastmod>2022-03-27T23:03:14+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/normalized-polish-expression/</loc>
-    <lastmod>2022-03-27T23:02:34+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/stockmeyer-algorithm/</loc>
-    <lastmod>2022-03-27T23:02:58+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/fbb-algorithm/</loc>
-    <lastmod>2022-03-27T23:00:51+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/eig-algorithm/</loc>
-    <lastmod>2022-03-27T23:00:36+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/fm-algorithm/</loc>
-    <lastmod>2022-03-27T23:00:25+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/kl-algorithm/</loc>
-    <lastmod>2022-03-27T22:59:47+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/flowmap-algorithm/</loc>
-    <lastmod>2022-03-27T22:57:27+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://BWbwchen.github.io/posts/rajaraman-and-wong-algorithm/</loc>
-    <lastmod>2022-04-18T23:53:55+08:00</lastmod>
   </url>
   <url>
     <loc>https://BWbwchen.github.io/posts/raft/</loc>
@@ -119,5 +67,61 @@
   <url>
     <loc>https://BWbwchen.github.io/posts/go-struct-interface/</loc>
     <lastmod>2022-03-25T08:55:57+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/1-steiner-routing-algorithm/</loc>
+    <lastmod>2022-04-21T21:48:22+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/l-shaped-steiner-routing-algorithm/</loc>
+    <lastmod>2022-04-21T21:48:48+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/timberwolf-algorithm/</loc>
+    <lastmod>2022-04-21T22:00:13+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/gordian-algorithm/</loc>
+    <lastmod>2022-03-27T23:05:16+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/mincut-placement/</loc>
+    <lastmod>2022-03-27T23:05:20+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/ilp-floorplanning-algorithm/</loc>
+    <lastmod>2022-03-27T23:03:14+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/normalized-polish-expression/</loc>
+    <lastmod>2022-03-27T23:02:34+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/stockmeyer-algorithm/</loc>
+    <lastmod>2022-03-27T23:02:58+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/fbb-algorithm/</loc>
+    <lastmod>2022-03-27T23:00:51+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/eig-algorithm/</loc>
+    <lastmod>2022-03-27T23:00:36+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/fm-algorithm/</loc>
+    <lastmod>2022-03-27T23:00:25+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/kl-algorithm/</loc>
+    <lastmod>2022-03-27T22:59:47+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/flowmap-algorithm/</loc>
+    <lastmod>2022-03-27T22:57:27+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://BWbwchen.github.io/eda/rajaraman-and-wong-algorithm/</loc>
+    <lastmod>2022-04-18T23:53:55+08:00</lastmod>
   </url>
 </urlset>

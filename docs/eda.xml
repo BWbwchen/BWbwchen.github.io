@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Bo-Wei Chen</title>
+    <link>https://BWbwchen.github.io/</link>
+    <atom:link href="https://BWbwchen.github.io/eda.xml" rel="self" type="application/rss+xml"/>
+    <description>Bo-Wei Chen's Blog
+</description>
+    <image>
+      <title>Bo-Wei Chen</title>
+      <url>https://BWbwchen.github.io/favicon.png</url>
+      <link>https://BWbwchen.github.io/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>1-Steiner Routing Algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/1-steiner-routing-algorithm</link>
+      <description>Note for EDA routing algorithm - 1-Steiner Routing Algorithm</description>
+      <category>EDA</category>
+      <category>routing</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/1-steiner-routing-algorithm</guid>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>L-shaped Steiner Routing Algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/l-shaped-steiner-routing-algorithm</link>
+      <description>Note for EDA routing algorithm - L-shaped Steiner Routing Algorithm</description>
+      <category>EDA</category>
+      <category>routing</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/l-shaped-steiner-routing-algorithm</guid>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>TimberWolf algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/timberwolf-algorithm</link>
+      <description>Note for EDA placement algorithm - TimberWolf algorithm</description>
+      <category>EDA</category>
+      <category>placement</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/timberwolf-algorithm</guid>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>GORDIAN algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/gordian-algorithm</link>
+      <description>Note for EDA placement algorithm - GORDIAN algorithm</description>
+      <category>EDA</category>
+      <category>placement</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/gordian-algorithm</guid>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Mincut placement with propagation </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/mincut-placement</link>
+      <description>Note for EDA placement algorithm - Mincut placement with propagation</description>
+      <category>EDA</category>
+      <category>placement</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/mincut-placement</guid>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ILP floorplanning algorithm </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/ilp-floorplanning-algorithm</link>
+      <description>Note for EDA floorplanning algorithm - ILP floorplanning algorithm</description>
+      <category>EDA</category>
+      <category>floorplanning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/ilp-floorplanning-algorithm</guid>
+      <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Normalized Polish Expression </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/normalized-polish-expression</link>
+      <description>Note for EDA floorplanning algorithm - Normalized Polish Expression</description>
+      <category>EDA</category>
+      <category>floorplanning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/normalized-polish-expression</guid>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Stockmeyer algorithm </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/stockmeyer-algorithm</link>
+      <description>Note for EDA floorplanning algorithm - Stockmeyer algorithm</description>
+      <category>EDA</category>
+      <category>floorplanning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/stockmeyer-algorithm</guid>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2016/11/24/20/30/architecture-1857175_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>FBB algorithm </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/fbb-algorithm</link>
+      <description>Note for EDA partitioning algorithm - FBB algorithm</description>
+      <category>EDA</category>
+      <category>partitioning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/fbb-algorithm</guid>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>EIG algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/eig-algorithm</link>
+      <description>Note for EDA partitioning algorithm - EIG algorithm</description>
+      <category>EDA</category>
+      <category>partitioning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/eig-algorithm</guid>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Fiduccia and Mattheyses algorithm (FM algorithm) </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/fm-algorithm</link>
+      <description>Note for EDA partitioning algorithm -  Fiduccia and Mattheyses algorithm (FM algorithm)</description>
+      <category>EDA</category>
+      <category>partitioning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/fm-algorithm</guid>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Kernighan and Lin algorithm (KL algorithm)</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/kl-algorithm</link>
+      <description>Note for EDA partitioning algorithm - Kernighan and Lin algorithm (KL algorithm)</description>
+      <category>EDA</category>
+      <category>partitioning</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/kl-algorithm</guid>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>FlowMap algorithm </title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/flowmap-algorithm</link>
+      <description>Note for EDA cluster algorithm - FlowMap algorithm</description>
+      <category>EDA</category>
+      <category>clustering</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/flowmap-algorithm</guid>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Rajaraman and Wong algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/rajaraman-and-wong-algorithm</link>
+      <description>Note for EDA cluster algorithm - Rajaraman and Wong algorithm</description>
+      <category>EDA</category>
+      <category>clustering</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/rajaraman-and-wong-algorithm</guid>
+      <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>

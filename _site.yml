@@ -17,6 +17,8 @@ navbar:
       href: index.html
     - text: "Blog"
       href: blog.html
+    - text: "EDA"
+      href: eda.html
     - text: "Software"
       href: software.html
     - text: "Writing"
