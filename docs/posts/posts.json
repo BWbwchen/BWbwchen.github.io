@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/qemu/",
+    "title": "QEMU",
+    "description": "QEMU emulator notes",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-04-22",
+    "categories": [
+      "VM"
+    ],
+    "contents": "\n\nContents\nAdd a virtual disk\nStart the QEMU VM\nSetup bridge network\nSetup NFS\nMonitor\nLive migration\nPerformance testing\n\nIt is a software emulator\nWhat about KVM? Xen?\nIt is a supported module to boost the speed of qemu.\nEnable by -enable-kvm\n\n\nAdd a virtual disk\n          qemu-img create -f qcow2 ubuntu.qcow2 10G\nqcow2\nSomething like loopback file system.\nIt will occupy the space in the disk, If it actually that big.\nStart the QEMU VM\nqemu 4.2\nmanual\n          sudo qemu-system-x86_64 -cpu host -enable-kvm \\\n          -m 1G -smp 1 \\\n          -drive if=virtio,format=qcow2,file=ubuntu.qcow2 \\\n          -boot d -cdrom ubuntu-20.04.4-live-server-amd64.iso \\\n          -vnc :0\nSetup bridge network\nI use ubuntu netplan, which will\ngenerate the corresponding config for specific backend network manger,\nsuch as systemd-networkd.\n          network:\n              version: 2\n              renderer: networkd\n              ethernets:\n                  enp1s0:\n                      dhcp4: no\n              bridges:\n                  br0:\n                      interfaces: [enp1s0]\n                      addresses: [192.168.124.76/16]\n                      gateway4: 192.168.0.2\n                      nameservers:\n                          addresses: [140.114.64.1, 8.8.8.8]\n                      dhcp4: no\nAnd launch the vm with flag -nic tap\nSetup NFS\nOn NFS server:\n            $ sudo apt install nfs-kernel-server\n            $ sudo mkdir /mnt/nfs # setup the sync directory\n            $ sudo chown nobody:nogroup /mnt/nfs # remove any restriction in the directory\n            $ sudo chmod 777 /mnt/nfs # give all permission to all the file in the directory\n            $ sudo vim /etc/exports # Permission for accessing the NFS server\n            # in /etc/exports\n            /mnt/nfs  <client ip>(rw,sync,no_subtree_check,no_root_squash)\n            # /mnt/nfs_share  192.168.43.0/24(rw,sync,no_subtree_check) # allowed an entire subnet to have access to the NFS.\n            $ sudo exportfs -arv # export the NFS\nOn NFS client:\n            $ sudo apt install nfs-common\n            $ sudo mkdir /mnt/nfs # setup the sync directory\n            $ sudo mount -t nfs <server ip>:/mnt/nfs /mnt/nfs # mount NFS\nMonitor\nAdd flag -monitor telnet:127.0.0.1:5500,server,nowait\nand you can use telnet to mange the vm.\nLive migration\nIt actually stop the VM for a while, but in very short time.\nWe will need to add Monitor flag to the source vm.\nLaunch the destination vm with migration flag\n-incoming tcp:0:4400\n          $ telnet localhost 5500\n          (qemu) migrate -d tcp:<destination ip>:4400\n          (qemu) info migrate\nPerformance testing\nSysbench (cpu, memory\nperformance)\ntutorial\n              sysbench cpu --cpu-max-prime=20000 --max-time=20\nIperf (network)\nOn the server side :\n                  iperf -s\nOn the client side:\n                  iperf -c <server ip> -t <testing time(s)>\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-04-22T09:11:40+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/simulate-annealing-algorithm/",
     "title": "Simulate Annealing algorithm",
     "description": "Introduction to simulate annealing algorithm",
