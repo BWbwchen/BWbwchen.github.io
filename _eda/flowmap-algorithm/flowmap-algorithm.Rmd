@@ -33,6 +33,9 @@ preview: https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+For the talk slide: [link](https://drive.google.com/file/d/1IYgqU_L8s3N1aCF3fR6P3Z9wLaxcdW7o/view?usp=sharing)
+
+
 # Goal
 - Translate the boolean network to K-input lookup table. (with input pin constraint)
 - For FPGA K-input lookup table.
