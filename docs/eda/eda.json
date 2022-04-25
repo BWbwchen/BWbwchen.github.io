@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/bounded-radius-routing-algorithm/",
+    "title": "Bounded Radius Routing Algorithm",
+    "description": "Note for EDA routing algorithm - Bounded Radius Routing Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-04-25",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nBPRIM(Bounded Prim)\nBRBC(Bounded Radius\nBounded Cost)\n\nHow to construct MST with bounded radius or bounded wire length for\nL-Shaped\nSteiner Routing Algorithm? We called it bounded radius MST.\nBPRIM(Bounded Prim)\nInitialize MST \\(T\\) with source\nnode \\(s\\) .\n\\(R\\) is the longest distance from\n\\(s\\) to the other node in \\(P\\) .\nfor each node \\(v\\) , which is the\nclosest neighbor to \\(T\\) and \\(v \\notin T\\)\nThe closest node with \\(v\\) is\n\\(y\\) , where \\(v \\notin T, y \\in T\\) .\ncheck \\(dist_T(s, v) + dist(v, y) \\leq (1\n+ \\epsilon)R\\) , where \\(\\epsilon\\) is user\nYes, add edge \\((v, y)\\) into \\(T\\) .\nNo, Find some node \\(v' \\in T\\)\nsuch that \\(dist_T(s, v') + dist(v' +\ny) \\leq R\\)\n\n\nBRBC(Bounded Radius Bounded\nCost)\nConstruct initial MST \\(Q\\)\nMake MST \\(Q\\) became a rooted tree\n\\(T_s\\)\nThe order of Depth-first search on \\(T_s\\) is \\(L\\)\nfor each \\(v \\in L\\) with ordered\niterating\ncheck \\(\\epsilon \\cdot dist(s, v) \\leq\nS\\) , where \\(S\\) is the\naccumulated cost of the path from the latest check point.\nYes!\nSet \\(S\\) became \\(0\\)\nthe start point of the calculation of \\(S\\) became \\(v\\) .\nAdd edge \\((s, v)\\) into \\(Q\\) .\n\nNo! do nothing.\n\nConstruct the shortest path tree on \\(Q\\) and it will become BR-MST.\nFind the shortest path from \\(s\\)\nto the other point and it is the shortest path tree.\n\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-04-25T15:43:57+08:00",
+    "input_file": "bounded-radius-routing-algorithm.knit.md"
+  },
+  {
     "path": "eda/1-steiner-routing-algorithm/",
     "title": "1-Steiner Routing Algorithm",
     "description": "Note for EDA routing algorithm - 1-Steiner Routing Algorithm",

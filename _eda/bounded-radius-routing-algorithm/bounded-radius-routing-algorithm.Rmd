@@ -1,0 +1,60 @@
+---
+title: "Bounded Radius Routing Algorithm"
+description: |
+  Note for EDA routing algorithm - Bounded Radius Routing Algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-04-25
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - routing
+  - CAD
+preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- How to construct MST with bounded radius or bounded wire length for [L-Shaped Steiner Routing Algorithm](../l-shaped-steiner-routing-algorithm/index.html)? We called it bounded radius MST.
+
+## BPRIM(Bounded Prim)
+- Initialize MST $T$ with source node $s$ .
+- $R$ is the longest distance from $s$ to the other node in $P$ .
+- for each node $v$ , which is the closest neighbor to $T$ and $v \notin T$
+	- The closest node with $v$ is $y$ , where $v \notin T, y \in T$ .
+	- check $dist_T(s, v) + dist(v, y) \leq (1 + \epsilon)R$ , where $\epsilon$ is user
+		- Yes, add edge $(v, y)$ into $T$ .
+		- No, Find some node $v' \in T$ such that $dist_T(s, v') + dist(v' + y) \leq R$
+
+## BRBC(Bounded Radius Bounded Cost)
+- Construct initial MST $Q$
+- Make MST $Q$ became a rooted tree $T_s$
+- The order of Depth-first search on $T_s$ is $L$
+- for each $v \in L$ with ordered iterating
+	- check $\epsilon \cdot dist(s, v) \leq S$ , where $S$ is the accumulated cost of the path from the latest check point.
+	- Yes!
+		- Set $S$ became $0$
+		- the start point of the calculation of $S$ became $v$ .
+		- Add edge $(s, v)$ into $Q$ .
+	- No! do nothing.
+- Construct the shortest path tree on $Q$ and it will become BR-MST.
+	- Find the shortest path from $s$ to the other point and it is the shortest path tree.
+
+

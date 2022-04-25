@@ -12,7 +12,19 @@
       <link>https://BWbwchen.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Bounded Radius Routing Algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/bounded-radius-routing-algorithm</link>
+      <description>Note for EDA routing algorithm - Bounded Radius Routing Algorithm</description>
+      <category>EDA</category>
+      <category>routing</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/bounded-radius-routing-algorithm</guid>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>1-Steiner Routing Algorithm</title>
       <dc:creator>Bo-Wei Chen</dc:creator>
