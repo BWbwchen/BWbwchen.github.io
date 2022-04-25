@@ -18,7 +18,7 @@
     "contents": "\n\nContents\nBPRIM(Bounded Prim)\nBRBC(Bounded Radius\nBounded Cost)\n\nHow to construct MST with bounded radius or bounded wire length for\nL-Shaped\nSteiner Routing Algorithm? We called it bounded radius MST.\nBPRIM(Bounded Prim)\nInitialize MST \\(T\\) with source\nnode \\(s\\) .\n\\(R\\) is the longest distance from\n\\(s\\) to the other node in \\(P\\) .\nfor each node \\(v\\) , which is the\nclosest neighbor to \\(T\\) and \\(v \\notin T\\)\nThe closest node with \\(v\\) is\n\\(y\\) , where \\(v \\notin T, y \\in T\\) .\ncheck \\(dist_T(s, v) + dist(v, y) \\leq (1\n+ \\epsilon)R\\) , where \\(\\epsilon\\) is user\nYes, add edge \\((v, y)\\) into \\(T\\) .\nNo, Find some node \\(v' \\in T\\)\nsuch that \\(dist_T(s, v') + dist(v' +\ny) \\leq R\\)\n\n\nBRBC(Bounded Radius Bounded\nCost)\nConstruct initial MST \\(Q\\)\nMake MST \\(Q\\) became a rooted tree\n\\(T_s\\)\nThe order of Depth-first search on \\(T_s\\) is \\(L\\)\nfor each \\(v \\in L\\) with ordered\niterating\ncheck \\(\\epsilon \\cdot dist(s, v) \\leq\nS\\) , where \\(S\\) is the\naccumulated cost of the path from the latest check point.\nYes!\nSet \\(S\\) became \\(0\\)\nthe start point of the calculation of \\(S\\) became \\(v\\) .\nAdd edge \\((s, v)\\) into \\(Q\\) .\n\nNo! do nothing.\n\nConstruct the shortest path tree on \\(Q\\) and it will become BR-MST.\nFind the shortest path from \\(s\\)\nto the other point and it is the shortest path tree.\n\n\n\n\n",
     "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
     "last_modified": "2022-04-25T15:43:57+08:00",
-    "input_file": "bounded-radius-routing-algorithm.knit.md"
+    "input_file": {}
   },
   {
     "path": "eda/1-steiner-routing-algorithm/",
@@ -206,7 +206,7 @@
     ],
     "contents": "\n\nContents\nGoal\nRe-construct the flow\nnetwork\nIteratively\ncall the maximum-flow algorithm\n\nGoal\nBalanced bipartition.\ndivided the circuit into 2 equal-sized partitions.\nRe-construct the flow\nnetwork\nTurn the original circuit into bi-directed graph\nhttps://i.imgur.com/xbvXKhs.pngfor each net \\(n\\) (hyperedge)\nadd vertices into graph \\(G\\)\nadd two auxiliary nodes \\(n_1\\) and\n\\(n_2\\) into the graph \\(G\\) with edge of capacity \\(0\\)\nconnect the vertices into \\(n_1\\)\nand \\(n_2\\) into all the vertices with\nedge of capacity \\(\\infty\\)\n\n\nIteratively call\nthe maximum-flow algorithm\nRandomly select 2 vertices as \\(s\\)\nand \\(t\\) for maximum-flow\nalgorithm.\nFound the augmenting path \\(AG\\)\n(maybe multiple paths)\nThere are some net \\(n\\) in the\n\\(AG\\) , check whether it will\nconstruct the balanced partition.\nYes\nWe found the partition with cut size equals to the maximum flow\nvalue.\n\nNo, We got a cut \\(C(X, X')\\)\nif \\(|X|\\) has less vertices, merge\nthe random vertices in \\(X'\\) into\nvertex \\(s\\) , vice versa.\n\n\n",
     "preview": "https://cdn.pixabay.com/photo/2017/07/13/19/30/texture-2501600_960_720.jpg",
-    "last_modified": "2022-03-27T23:00:51+08:00",
+    "last_modified": "2022-04-25T15:49:39+08:00",
     "input_file": {}
   },
   {
