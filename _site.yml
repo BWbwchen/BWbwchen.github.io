@@ -33,7 +33,7 @@ navbar:
 output: 
   distill::distill_article:
     includes:
-      in_header: giscus.html
+      in_header: [giscus.html, ga.html]
 
 include: ["_footer.html", "favicon.png"]
 exclude: ["docs.txt", "*.csv", "Makefile"]
