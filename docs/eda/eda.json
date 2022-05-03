@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/a-tree-algorithm/",
+    "title": "A-tree Algorithm",
+    "description": "Note for EDA routing algorithm - A-tree Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-05-03",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nMSP-SA and MRSA\nGoal\nAlgorithm\nPartition\nthe neighboring nodes of every node \\(p\\)\n3 value( \\(dx,\ndy, df\\) )\n3 safe moves\nT1\nT2\nT3\n\nProcessing\n\n\nMSP-SA and MRSA\nMSP-SA is Minimum shortest path steiner arborescence.\nMRSA is rectilinear version of MSP-SA. Minimum Rectilinear steiner\narborescence.\nGoal\nUse A-tree Algorithm to solve MRSA problem.\nMinimize the overall wire length.\nAlso maintaining the shortest linear path length from source to all\nsink node.\nAlgorithm\nPartition the\nneighboring nodes of every node \\(p\\)\nnodes in \\(NW(p), SE(P)\\) or\n\\(D(p, F_k)\\) are root node!\nhttps://i.imgur.com/1TMlxqZ.jpg\nhttps://i.imgur.com/tg3K7Lo.jpg\n3 value( \\(dx, dy,\ndf\\) )\n\\(dx\\) is the minimum horizontal\ndistance from \\(p\\) to the node in\n\\(NW(p)\\) , which isn’t blocked by\n\\(p\\)\n沒被 block的root node 且與 \\(p\\)\n最短水平距離\n\n\\(dy\\) is the minimum vertical\ndistance from \\(p\\) to the node in\n\\(SE(p)\\) , which isn’t blocked by\n\\(p\\)\n沒被 block的root node 且與 \\(p\\)\n最短垂直距離\n\n\\(dy\\) is the minimum rectilinear\ndistance from \\(p\\) to the node in\n\\(D(p, F_k)\\) . nodes here don’t need\nto be root nodes.\n\\(mf_w\\) is the node with minimum\nx-coordinate.\n\\(mf_s\\) is the node with minimum\ny-coordinate.\n與 \\(p\\) 有最短 rectilinear 距離的\nnode (不一定要是 root node)\n\n3 safe moves\nT1\n\\(dx \\ge df\\) and \\(dy \\ge df\\) . It means that we will only\nuse nodes in \\(D(p,F_k)\\)\nAdd a path that connect \\(p\\) and\n\\(mf_w\\) .\nRemove \\(p\\) from root node\nlist.\nT2\n\\(dx \\ge df\\) and \\(dy < df\\) . It means that we may use\nnode in \\(SE(p)\\) or \\(D(p, F_k)\\)\nAdd down-ward vertical path of length \\(p'\\) and that point is a steiner point.\n\\(p' = \\min (d(p, mf_s),\ndy)\\)\n\nRemove \\(p\\) from root node list\nand add node \\(p'\\) into root node\nlist.\nT3\n\\(dx < df\\) and \\(dy \\ge df\\) . It means that we may use node\nin \\(NW(p)\\) or \\(D(p, F_k)\\)\nAdd left-ward vertical path of length \\(p'\\) and that point is a steiner point.\n\\(p' = \\min (d(p, mf_w),\ndx)\\)\n\nRemove \\(p\\) from root node list\nand add node \\(p'\\) into root node\nlist.\nProcessing\nStart with an initial forest \\(F_0\\) , which is construct by all\nnode.\nthen a sequence of moves, which are growing(T2, T3) or merging(T1),\nare performed.\nAfter each move, we will need to recalculate the \\(dx, dy, df\\) value.\n\nAt the end, there will remain only 1 tree and we done.\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-05-03T10:10:24+08:00",
+    "input_file": {}
+  },
+  {
     "path": "eda/bounded-radius-routing-algorithm/",
     "title": "Bounded Radius Routing Algorithm",
     "description": "Note for EDA routing algorithm - Bounded Radius Routing Algorithm",
