@@ -9,6 +9,12 @@ knitr::opts_chunk$set(echo = FALSE)
 library(distilltools)
 ```
 
+## Quine-McCluskey-algorithm
+The implementation of the Quine-McCluskey algorithm in C++.
+
+`r icon_link("github", "Code", "https://github.com/BWbwchen/Quine-McCluskey-algorithm")`
+`r icon_link("file", "Paper", "https://drive.google.com/file/d/1lmGZnTf4yrZGXXkqLPmlH5gW7t6Krg53/view?usp=sharing")`
+
 ## Finpass
 A password manager. Log in to sites with ML-based signature verification.
 
