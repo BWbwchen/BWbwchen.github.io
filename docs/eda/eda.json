@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/elmore-routing-tree-algorithm/",
+    "title": "Elmore Routing Tree Algorithm",
+    "description": "Note for EDA routing algorithm - Elmore Routing Tree Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nElmore delay\nElmore Routing Tree\nAlgorithm\nSteiner Elmore\nRouting Tree Algorithm\n\n\nSimilar to Bounded Radius\nRouting Algorithm and 1-Steiner Routing\nAlgorithm.\nBut different in how to select a good node for prim’s MST\nalgorithm\nElmore delay\n\\(t_{elmore}(n_i) = r_d \\cdot C_{n_0} +\n\\sum_{e_v \\in path(n_0, n_i)}\nr_{e_v}(\\frac{c_{e_v}}{2}+C_v)\\)\n\\(r_d\\) is the output\nresistance\n\\(C_{n_i}\\) is the total\ncapacitance of a subtree of \\(T\\)\nrooted at \\(n_i\\)\n\\(e_v\\) is the edge between vertex\n\\(v\\) and its parent.\n\\(r_{e_v}\\) and \\(c_{e_v}\\) are calculated by the problem\nparameter. \\(\\Omega / m(wire length)\\)\nand \\(F / m(wire length)\\)\nElmore Routing Tree\nAlgorithm\nselect phase:\nfor node \\(v\\) in \\(MST\\) :\nfind the nearest node \\(u\\) of\n\\(v\\)\nCalculate the elmore delay for \\(u\\)\n\nchoose the lowest elmore delay node as the next included node.\nSteiner Elmore Routing\nTree Algorithm\nselect phase:\nfor node \\(v\\) in \\(MST\\) :\nfind the nearest node \\(u\\) of\n\\(v\\) and try to add steiner\npoint between u and v\nCalculate the elmore delay for \\(u\\)\nOr connect \\(u\\) and \\(s\\)(source) node and calculate the elmore\ndelay.\n\nchoose the lowest elmore delay node as the next included node.\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-05-06T09:50:01+08:00",
+    "input_file": {}
+  },
+  {
     "path": "eda/a-tree-algorithm/",
     "title": "A-tree Algorithm",
     "description": "Note for EDA routing algorithm - A-tree Algorithm",
