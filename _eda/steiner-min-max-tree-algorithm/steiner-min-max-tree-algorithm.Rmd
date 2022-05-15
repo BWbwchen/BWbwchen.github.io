@@ -1,0 +1,76 @@
+---
+title: "Steiner Min-Max Tree Algorithm"
+description: |
+  Note for EDA routing algorithm - Steiner Min-Max Tree Algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-05-15
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - routing
+  - CAD
+preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## SMMT(Steiner Min-Max Tree Algorithm)
+- minimized the maximum sum of edge in the tree.
+- $\min (\max \sum_{edge e \in T} w(e))$
+
+## What is the meaning of edge?
+- How many nets are overlapping on this edge?
+- Imporve routability
+- Minimize congestion
+
+- We can use [ALG-SMMT](https://limsk.ece.gatech.edu/course/ece6133/papers/min-max.pdf) algorithm to solve optimal SMMT problem(Not NP-hard problem). If we want to minimized the wire length of SMMT tree, that is called MSMMT problem, which is NP-hard problem.
+
+## Algorithm
+- We will sequantially route the nets and the nets order is important for the result.
+- We will use HPBB(half-perimeter of the bounding box) as our estimation of wire length.
+- We will use the HPBB value as nets in increasing order.
+
+### SMMT phase
+- for each net $n$ in the order above
+	- Use ALG-SMMT to build a MST from graph $G$
+	- Remove the vertex, which match both condition below, and it will become a Steiner tree $ST'$
+		- vertex with degree 1.
+		- Non-terminal vertex.(The vertex which is not the node in nets).
+	- Check the wirelength of $ST'$ for this net, if:
+		- $< threshold$ , accept it!
+		- $> threshold$ , reject it! don't add this tree into the final result.
+		- $threshold = \text{unit cost per wire length} \cdot HPBB(n)$
+- We can execute this pass multiple times or just 1 time.
+
+### SP phase
+- for each net $n$ in the order above (same as SMMT phase):
+	- Remove the steiner tree of $n$ from the graph $G$ and also remove the occupied capacity from each edge.
+	- Use ALG-SP algorithm to re-route the graph $G$ in order to minimize the wirelength.
+		- The center of SP tree is the vertex, which is the closest to the geometric center of the bounding box of $n$ .
+	- Check the routing result, it should obey the edge capacity constraint.
+	- Check the wire length, if :
+		- max weight edge reduced, accept it!, or
+		- wire length reduced, accept it!
+		- If reject, just use previous result.
+- We can execute this pass multiple times or just 1 time.
+
+
+

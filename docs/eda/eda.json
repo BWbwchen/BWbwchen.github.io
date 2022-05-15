@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/steiner-min-max-tree-algorithm/",
+    "title": "Steiner Min-Max Tree Algorithm",
+    "description": "Note for EDA routing algorithm - Steiner Min-Max Tree Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-05-15",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nSMMT(Steiner Min-Max\nTree Algorithm)\nWhat is the meaning of\nedge?\nAlgorithm\nSMMT phase\nSP phase\n\n\nSMMT(Steiner Min-Max Tree\nAlgorithm)\nminimized the maximum sum of edge in the tree.\n\\(\\min (\\max \\sum_{edge e \\in T}\nw(e))\\)\nWhat is the meaning of edge?\nHow many nets are overlapping on this edge?\nImporve routability\nMinimize congestion\nWe can use ALG-SMMT\nalgorithm to solve optimal SMMT problem(Not NP-hard problem). If we want\nto minimized the wire length of SMMT tree, that is called MSMMT problem,\nwhich is NP-hard problem.\nAlgorithm\nWe will sequantially route the nets and the nets order is important\nfor the result.\nWe will use HPBB(half-perimeter of the bounding box) as our\nestimation of wire length.\nWe will use the HPBB value as nets in increasing order.\nSMMT phase\nfor each net \\(n\\) in the order\nabove\nUse ALG-SMMT to build a MST from graph \\(G\\)\nRemove the vertex, which match both condition below, and it will\nbecome a Steiner tree \\(ST'\\)\nvertex with degree 1.\nNon-terminal vertex.(The vertex which is not the node in nets).\n\nCheck the wirelength of \\(ST'\\)\nfor this net, if:\n\\(< threshold\\) , accept\nit!\n\\(> threshold\\) , reject it!\ndon’t add this tree into the final result.\n\\(threshold = \\text{unit cost per wire\nlength} \\cdot HPBB(n)\\)\n\n\nWe can execute this pass multiple times or just 1 time.\nSP phase\nfor each net \\(n\\) in the order\nabove (same as SMMT phase):\nRemove the steiner tree of \\(n\\)\nfrom the graph \\(G\\) and also remove\nthe occupied capacity from each edge.\nUse ALG-SP algorithm to re-route the graph \\(G\\) in order to minimize the wirelength.\nThe center of SP tree is the vertex, which is the closest to the\ngeometric center of the bounding box of \\(n\\) .\n\nCheck the routing result, it should obey the edge capacity\nconstraint.\nCheck the wire length, if :\nmax weight edge reduced, accept it!, or\nwire length reduced, accept it!\nIf reject, just use previous result.\n\n\nWe can execute this pass multiple times or just 1 time.\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-05-15T21:25:21+08:00",
+    "input_file": {}
+  },
+  {
     "path": "eda/elmore-routing-tree-algorithm/",
     "title": "Elmore Routing Tree Algorithm",
     "description": "Note for EDA routing algorithm - Elmore Routing Tree Algorithm",
