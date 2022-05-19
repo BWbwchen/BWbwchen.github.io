@@ -1,0 +1,115 @@
+---
+title: "Multi-Commodity Flow Routing Algorithm"
+description: |
+  Note for EDA routing algorithm - Multi-Commodity Flow Routing Algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-05-19
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - routing
+  - CAD
+preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Multi-Commodity Flow Problem
+- A generalization of the network flow problem, where multiple commodities must be shipped from their own source to the sinks on a common network.
+- The goal is to minimized the total shipping cost.
+- NP-Complete. Usually solved by LP solver.
+
+
+## Multi-net routing problem
+- We can formulate the multi-net routing problem as a multi-commodity flow problem.
+- We can route all nets simultaneously!
+
+
+## Notation
+- For edge $e(x, y)$ in the network graph
+	- There are 2 directed arcs:
+		- $\text{arc}(x, y)$ and $\text{arc}(y, x)$
+
+## Method 1: ILP(integer linear programming)
+- $x_a^k$ means that the arc a in net k is being used(1) or not(0).
+
+### Integer constraint
+- $x_a^k \in \{0, 1\}$
+
+### Objective function
+- $\min \sum_{a \in \text{arc, } k \in \text{nets}} x_a^k \times w(a)$
+
+### Demand constraint
+- Given a node $v \in V$ and a net $k \in \text{nets}$ , we define a variable $z_a^k$ .
+- $z_a^k \in \{-1, 0, 1\}$ .
+- -1 means node $v$ is a sink node in net $k$ .
+	- $x_a^k + x_{a'}^k = -1, a'$ is the inverse direction of $a$
+- 1 means node $v$ is a source node in net $k$ .
+	- $x_a^k + x_{a'}^k = 1, a'$ is the inverse direction of $a$
+- 0 means node $v$ is NEITHER a source node NOR a sink node in net $k$ .
+	- $x_a^k + x_{a'}^k = 0, a'$ is the inverse direction of $a$
+
+### Capacity constraint $c$
+- $\sum_{k \in \text{nets}} x_a^k + x_{a'}^k \leq c, a'$ is the inverse direction of $a$
+
+
+- And use LP solver to solve the answer.
+
+
+## Method 2: heuristic algorithm, MM(minimax)
+
+#### Step 1: Compute the shortest path for all nets while ignoring capacity constraints.
+
+#### Step 2: Compute $M_r$ , the maximum overflow value among all arcs.
+
+#### Step 3: Obtain $J_r$ and $J_r^0$
+- $J_r$ is the set of arcs with $M_r$ value.
+- $J_r^0$ is the set of arcs with $M_r-1$ value, $J_r^{-1}$ plus $J_r$ .
+- $J_r^0 = J_r^{-1} \cup J_r$
+
+#### Step 4: Assign $\infty$ as the cost of all arcs in $J_r^0$
+- We cut the arcs in $J_r^0$ first, in order to re-calculate a suitable new path for the overflow nets.
+
+#### Step 5: Obtain $K_r$ and $K_r^0$
+- $K_r$ is the set of nets with arcs in $J_r$ .
+- $K_r^{-1}$ is the set of nets with arcs in $J_r^0$ .
+- $K_r^0 = K_r^{-1} \cup K_r$
+
+#### Step 6: Re-compute the shortest path for all nets in $K_r$ with new cost(Some arcs are $\infty$ )
+- Find new path for the overflow nets.
+
+#### Step 7-1: We find some nets with non- $\infty$ cost.
+- $k_0$ is the net with the minimum cost increase between old and the new routes.
+	- Although we find a new route path, we still want the routing cost to be minimized.
+
+#### Step 7-2: All nets are $\infty$ cost. (Maybe unsolvable or need to rip up the nets)
+- If we only use 1 arc or 0 arc in the whole network for the net $k \in K_r^0$ .
+	- It means that we cannot route this graph. It do not have a solution.
+- else, we find the net $k' \in K_r^0$ will the maximum number of arcs in $J_r^0$ .
+	- Rip up $k'$ and reroute it.
+	- Add to the last iteration's solution and go back to Step 1.
+
+#### Step 8: Construct the new routing solution by change the net $k_0$ with new routing path only.
+- We will use the old routing solution from the last iteration except for the net $k_0$ .
+
+#### Step 9: Back to Step 1, until the maximum overflow $\leq 0$ .
+
+

@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/multi-commodity-flow-routing-algorithm/",
+    "title": "Multi-Commodity Flow Routing Algorithm",
+    "description": "Note for EDA routing algorithm - Multi-Commodity Flow Routing Algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-05-19",
+    "categories": [
+      "EDA",
+      "routing",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nMulti-Commodity Flow\nProblem\nMulti-net routing\nproblem\nNotation\nMethod 1:\nILP(integer linear programming)\nInteger constraint\nObjective function\nDemand constraint\nCapacity constraint \\(c\\)\n\nMethod 2:\nheuristic algorithm, MM(minimax)\nStep\n1: Compute the shortest path for all nets while ignoring capacity\nconstraints.\nStep\n2: Compute \\(M_r\\) , the maximum\noverflow value among all arcs.\nStep 3: Obtain \\(J_r\\) and \\(J_r^0\\)\nStep\n4: Assign \\(\\infty\\) as the cost of all\narcs in \\(J_r^0\\)\nStep 5: Obtain \\(K_r\\) and \\(K_r^0\\)\nStep\n6: Re-compute the shortest path for all nets in \\(K_r\\) with new cost(Some arcs are \\(\\infty\\) )\nStep\n7-1: We find some nets with non- \\(\\infty\\) cost.\nStep\n7-2: All nets are \\(\\infty\\) cost.\n(Maybe unsolvable or need to rip up the nets)\nStep\n8: Construct the new routing solution by change the net \\(k_0\\) with new routing path only.\nStep 9:\nBack to Step 1, until the maximum overflow \\(\\leq 0\\) .\n\n\nMulti-Commodity Flow Problem\nA generalization of the network flow problem, where multiple\ncommodities must be shipped from their own source to the sinks on a\ncommon network.\nThe goal is to minimized the total shipping cost.\nNP-Complete. Usually solved by LP solver.\nMulti-net routing problem\nWe can formulate the multi-net routing problem as a multi-commodity\nflow problem.\nWe can route all nets simultaneously!\nNotation\nFor edge \\(e(x, y)\\) in the network\ngraph\nThere are 2 directed arcs:\n\\(\\text{arc}(x, y)\\) and \\(\\text{arc}(y, x)\\)\n\n\nMethod 1: ILP(integer\nlinear programming)\n\\(x_a^k\\) means that the arc a in\nnet k is being used(1) or not(0).\nInteger constraint\n\\(x_a^k \\in \\{0, 1\\}\\)\nObjective function\n\\(\\min \\sum_{a \\in \\text{arc, } k \\in\n\\text{nets}} x_a^k \\times w(a)\\)\nDemand constraint\nGiven a node \\(v \\in V\\) and a net\n\\(k \\in \\text{nets}\\) , we define a\nvariable \\(z_a^k\\) .\n\\(z_a^k \\in \\{-1, 0, 1\\}\\) .\n-1 means node \\(v\\) is a sink node\nin net \\(k\\) .\n\\(x_a^k + x_{a'}^k = -1,\na'\\) is the inverse direction of \\(a\\)\n\n1 means node \\(v\\) is a source node\nin net \\(k\\) .\n\\(x_a^k + x_{a'}^k = 1,\na'\\) is the inverse direction of \\(a\\)\n\n0 means node \\(v\\) is NEITHER a\nsource node NOR a sink node in net \\(k\\) .\n\\(x_a^k + x_{a'}^k = 0,\na'\\) is the inverse direction of \\(a\\)\n\nCapacity constraint \\(c\\)\n\\(\\sum_{k \\in \\text{nets}} x_a^k +\nx_{a'}^k \\leq c, a'\\) is the inverse direction of \\(a\\)\nAnd use LP solver to solve the answer.\nMethod 2: heuristic\nalgorithm, MM(minimax)\nStep\n1: Compute the shortest path for all nets while ignoring capacity\nconstraints.\nStep\n2: Compute \\(M_r\\) , the maximum\noverflow value among all arcs.\nStep 3: Obtain \\(J_r\\) and \\(J_r^0\\)\n\\(J_r\\) is the set of arcs with\n\\(M_r\\) value.\n\\(J_r^0\\) is the set of arcs with\n\\(M_r-1\\) value, \\(J_r^{-1}\\) plus \\(J_r\\) .\n\\(J_r^0 = J_r^{-1} \\cup J_r\\)\nStep 4:\nAssign \\(\\infty\\) as the cost of all\narcs in \\(J_r^0\\)\nWe cut the arcs in \\(J_r^0\\) first,\nin order to re-calculate a suitable new path for the overflow nets.\nStep 5: Obtain \\(K_r\\) and \\(K_r^0\\)\n\\(K_r\\) is the set of nets with\narcs in \\(J_r\\) .\n\\(K_r^{-1}\\) is the set of nets\nwith arcs in \\(J_r^0\\) .\n\\(K_r^0 = K_r^{-1} \\cup K_r\\)\nStep\n6: Re-compute the shortest path for all nets in \\(K_r\\) with new cost(Some arcs are \\(\\infty\\) )\nFind new path for the overflow nets.\nStep 7-1: We\nfind some nets with non- \\(\\infty\\)\ncost.\n\\(k_0\\) is the net with the minimum\ncost increase between old and the new routes.\nAlthough we find a new route path, we still want the routing cost to\nbe minimized.\n\nStep\n7-2: All nets are \\(\\infty\\) cost.\n(Maybe unsolvable or need to rip up the nets)\nIf we only use 1 arc or 0 arc in the whole network for the net \\(k \\in K_r^0\\) .\nIt means that we cannot route this graph. It do not have a\nsolution.\n\nelse, we find the net \\(k' \\in\nK_r^0\\) will the maximum number of arcs in \\(J_r^0\\) .\nRip up \\(k'\\) and reroute\nit.\nAdd to the last iteration’s solution and go back to Step 1.\n\nStep\n8: Construct the new routing solution by change the net \\(k_0\\) with new routing path only.\nWe will use the old routing solution from the last iteration except\nfor the net \\(k_0\\) .\nStep\n9: Back to Step 1, until the maximum overflow \\(\\leq 0\\) .\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg",
+    "last_modified": "2022-05-19T23:15:38+08:00",
+    "input_file": {}
+  },
+  {
     "path": "eda/steiner-min-max-tree-algorithm/",
     "title": "Steiner Min-Max Tree Algorithm",
     "description": "Note for EDA routing algorithm - Steiner Min-Max Tree Algorithm",
