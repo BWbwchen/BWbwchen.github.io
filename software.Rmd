@@ -18,7 +18,7 @@ A password manager. Log in to sites with ML-based signature verification.
 
 
 ## Fiduccia and Mattheyses algorithm
-The implementation of the [Fiduccia and Mattheyses algorithm(FM algorithm)](../docs/eda/fm-algorithm/index.html) in C++.
+The implementation of the [Fiduccia and Mattheyses algorithm(FM algorithm)](./eda/fm-algorithm/index.html) in C++.
 
 <aside>
  Apr. 2022 - May. 2022
