@@ -15,6 +15,7 @@ Slides that I used in my lab group meeting.
 
 1. [Rajaraman and Wong algorithm](https://drive.google.com/file/d/1WLlxY_T14-YrKH2Hkzr0x-tpA_oIY9Fl/view?usp=sharing)
 2. [FlowMap algorithm](https://drive.google.com/file/d/1IYgqU_L8s3N1aCF3fR6P3Z9wLaxcdW7o/view?usp=sharing)
+2. [hMetis algorithm](https://drive.google.com/file/d/12OqGtDDV13Ek0MDmhq4ZHorfStXYxxhJ/view?usp=sharing)
 
 ## Notes
 
