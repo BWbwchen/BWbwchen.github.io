@@ -1,6 +1,5 @@
 ---
-title: "FlowMap algorithm
-"
+title: "FlowMap algorithm"
 description: |
   Note for EDA cluster algorithm - FlowMap algorithm
 

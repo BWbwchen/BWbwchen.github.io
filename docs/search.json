@@ -5,28 +5,28 @@
       "title": "About",
       "author": [],
       "contents": "\n\n    img {\n        width: 25%;\n        border-radius: 50%;\n        display: block;\n        margin-left: auto;\n        margin-right: auto;\n    }\nAbout me\nI’m Bo-Wei Chen, you can call me Tim.\nI am a master student major in Computer Science in National Tsing Hua\nUniversity. I study physical design in EDA and I love Long-distance\nrunning.\n🎓 Education\nNational Tsing Hua University, HsinChu, Tawan | MS\nin Computer Science\n\nSep. 2022(expected) - Jun. 2024 (expected)\nMy research topic is EDA, mainly focus on physical design.\n(Instructor: Prof. Ting-Chi Wang)\nNational Tsing Hua University, HsinChu, Tawan | BS\nin Computer Science\n\nSep. 2018 - Jun. 2022 (expected)\nMy undergraduate\n Research\nmainly focuses on CV (computer vision) and Person ReID(Person\nRe-identification).\n💻 Work Experience\nSoftware Engineer Intern\nat Logitech\n\nJul. 2021 - Aug. 2021 \\(\\cdot\\)\nHsinchu, Taiwan\nRefactored and optimized the keyboard ghost key test tool with\nPython.\nReduced 86.9% of execution time by paralleling the program and\npruning.\nPart-time Backend Engineer\nat Uniiqc\n\nMar. 2021 – Apr. 2021 \\(\\cdot\\) Taipei,\nTaiwan\nDesigned a RESTful B2B API and Database architecture. Implemented in\nGo.\nLaunched the service on the GCP app engine.\n📝 Selected Projects\nMapReduce\nAn easy-to-use Map Reduce Go parallel computing framework. pkg\nGame\ncheating detector\nGroup of 5. Written in Python. An application that detects\nwhether players are cheating in the game by machine learning.\nWon first prize out of 30 teams in a hackathon at NTHU.\nTiny URL\nservice\nWritten in Go. A scalable, high-performance URL-shortener and API\nservice built with Redis, mongoDB and Zookeeper. Deployed on rancher\nkubernetes and CI/CD pipeline on self-hosted Gitlab. Medium\n📕 Related Documents\nMy\nResume\nMy\nUndergraduate Research\n📞 Contact Me\nEmail\nLinkedIn\n\n\n\n",
-      "last_modified": "2022-05-20T08:05:00+08:00"
+      "last_modified": "2022-05-22T21:35:31+08:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-20T08:05:01+08:00"
+      "last_modified": "2022-05-22T21:35:33+08:00"
     },
     {
       "path": "eda.html",
       "title": "EDA",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-20T08:05:02+08:00"
+      "last_modified": "2022-05-22T21:35:34+08:00"
     },
     {
       "path": "index.html",
       "title": "Bo-Wei Chen",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          Bo-Wei Chen\n          \n          \n          Home\n          Blog\n          EDA\n          Software\n          Writing\n          About\n          \n          \n          \n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Bo-Wei Chen\n          \n          \n            \n              Hi! 👋 I am a master student\n              major in Computer Science in National Tsing Hua\n              University.\n              I study physical design in EDA and I love Long-distance\n              running.\n            \n            \n              Hi! 👋 I am a master student\n              major in Computer Science in National Tsing Hua\n              University.\n              I study physical design in EDA and I love Long-distance\n              running.\n            \n          \n\n          \n            \n              \n                  \n                    \n                       GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                       LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                       Resume\n                    \n                  \n                \n                                \n                  \n                    \n                       Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                     GitHub\n                  \n                \n                                \n                  \n                     LinkedIn\n                  \n                \n                                \n                  \n                     Resume\n                  \n                \n                                \n                  \n                     Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          © 2022 Bo-Wei Chen's\n          Blog\n          Powered by The\n          Distill Template Authors and RStudio, Inc.\n          \n          \n\n    \n  ",
-      "last_modified": "2022-05-20T08:05:02+08:00"
+      "last_modified": "2022-05-22T21:35:34+08:00"
     },
     {
       "path": "software.html",
@@ -34,7 +34,7 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\nFinpass\nA password manager. Log in to sites with ML-based signature\nverification.\n\nFeb. 2022 - current\nFiduccia and Mattheyses\nalgorithm\nThe implementation of the Fiduccia and Mattheyses\nalgorithm(FM algorithm) in C++.\n\nApr. 2022 - May. 2022\n Code\n Paper\nQuine-McCluskey algorithm\nThe implementation of the Quine-McCluskey algorithm in C++.\n\nMar. 2022 - Apr. 2022\n Code\n Paper\nMapReduce\nAn easy-to-use Map Reduce Go parallel computing framework.\n\nNov. 2021 - Dec. 2021\n Code\n Document\nGame cheating detector\nGroup of 5. Written in Python. An application that detects\nwhether players are cheating in the game by machine learning.\nWon first prize out of 30 teams in a hackathon at NTHU.\n\nOct. 2021\n Code\n News\nTiny URL service\nWritten in Go. A scalable, high-performance URL-shortener and API\nservice built with Redis, mongoDB and Zookeeper. Deployed on rancher\nkubernetes and CI/CD pipeline on self-hosted Gitlab.\n\nJul. 2021 - Aug. 2021\n Code\n Article\n\n\n\n",
-      "last_modified": "2022-05-20T08:05:03+08:00"
+      "last_modified": "2022-05-22T21:35:35+08:00"
     },
     {
       "path": "writing.html",
@@ -42,7 +42,7 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\nTalk slides\nSlides that I used in my lab group meeting.\nRajaraman\nand Wong algorithm\nFlowMap\nalgorithm\nNotes\nApplied\ncryptography\n\n\n\n",
-      "last_modified": "2022-05-20T08:05:04+08:00"
+      "last_modified": "2022-05-22T21:35:35+08:00"
     }
   ],
   "collections": ["posts/posts.json", "eda/eda.json"]

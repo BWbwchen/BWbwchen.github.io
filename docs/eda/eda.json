@@ -1,5 +1,26 @@
 [
   {
+    "path": "eda/hmetis/",
+    "title": "hMetis",
+    "description": "Note for EDA cluster algorithm - hMetis algorithm",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-05-22",
+    "categories": [
+      "EDA",
+      "clustering",
+      "CAD"
+    ],
+    "contents": "\n\nContents\nWhat properties?\n\n用於降低計算複雜度，因此將相同性質的 vertex group\n在一起，做完演算法之後再將 group 打開\nWhat properties?\nEdge coarsening (EC)\nGoal is to minimize the edge weight in the clustering graph.\nunmarked all node in the graph.\nfor each node \\(v\\) in random\norder:\ncalculate the edge weight of \\(e(v,\nu)\\) , \\(u\\) is the neighbor of\n\\(v\\)\nfind the edge \\(e(v, u)\\) with\nmaximum edge weight\nedge weight \\(= \\frac{1}{|h|-1}\\) ,\nwhere \\(h\\) is the edge contain \\(v\\) and \\(u\\) .\n\nMerge \\(v\\) and \\(u\\) .\nMarked \\(v\\) and \\(u\\) .\nuntil no unmarked node.\n\nHyperedge coarsening (HEC)\nSort the hyperedge.\nunweighted edge should be in increasing edge size order.\nweighted edge should be in decreasing edge weight order.\n\nFor each sorted edge \\(e\\)\nif all node in \\(e\\) are unmarked,\nthey became a cluster and marked them.\nelse, skip it.\n\nUnmarked remain node became a cluster of its own.\nModified hyperedge\ncoarsening (MHEC)\nSame as above, but different at the process for the remain\nnode.\nSort the hyperedge.\nunweighted edge should be in increasing edge size order.\nweighted edge should be in decreasing edge weight order.\n\nFor each sorted edge \\(e\\)\nif all node in \\(e\\) are unmarked,\nthey became a cluster and marked them.\nelse, skip it.\n\nUnmarked remain node became a big cluster.\nThis method tends to further reduce the hyperedge counts after\nclustering and balance the size among the clusters.\n\n\n\n",
+    "preview": "https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg",
+    "last_modified": "2022-05-22T21:35:17+08:00",
+    "input_file": {}
+  },
+  {
     "path": "eda/multi-commodity-flow-routing-algorithm/",
     "title": "Multi-Commodity Flow Routing Algorithm",
     "description": "Note for EDA routing algorithm - Multi-Commodity Flow Routing Algorithm",

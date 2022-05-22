@@ -1,0 +1,72 @@
+---
+title: "hMetis"
+description: |
+  Note for EDA cluster algorithm - hMetis algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-05-22
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - clustering
+  - CAD
+preview: https://cdn.pixabay.com/photo/2014/07/08/10/47/team-386673_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- 用於降低計算複雜度，因此將相同性質的 vertex group 在一起，做完演算法之後再將 group 打開
+
+
+## What properties?
+
+
+### Edge coarsening (EC)
+- Goal is to minimize the edge weight in the clustering graph.
+- unmarked all node in the graph.
+- for each node $v$ in random order:
+	- calculate the edge weight of $e(v, u)$ , $u$ is the neighbor of $v$
+	- find the edge $e(v, u)$ with maximum edge weight
+		- edge weight $= \frac{1}{|h|-1}$ , where $h$ is the edge contain $v$ and $u$ .
+	- Merge $v$ and $u$ .
+	- Marked $v$ and $u$ .
+	- until no unmarked node.
+
+
+### Hyperedge coarsening (HEC)
+- Sort the hyperedge.
+	- unweighted edge should be in increasing edge size order.
+	- weighted edge should be in decreasing edge weight order.
+- For each sorted edge $e$
+	- if all node in $e$ are unmarked, they became a cluster and marked them.
+	- else, skip it.
+- Unmarked remain node became a cluster of its own.
+
+
+### Modified hyperedge coarsening (MHEC)
+- Same as above, but different at the process for the remain node.
+- Sort the hyperedge.
+	- unweighted edge should be in increasing edge size order.
+	- weighted edge should be in decreasing edge weight order.
+- For each sorted edge $e$
+	- if all node in $e$ are unmarked, they became a cluster and marked them.
+	- else, skip it.
+- Unmarked remain node became a big cluster.
+- This method tends to further reduce the hyperedge counts after clustering and balance the size among the clusters.
