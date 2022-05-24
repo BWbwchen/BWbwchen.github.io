@@ -12,7 +12,20 @@
       <link>https://BWbwchen.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Iterative Deletion Algorithm</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/eda/iterative-deletion-algorithm</link>
+      <description>Note for EDA routing algorithm - Iterative Deletion Algorithm</description>
+      <category>EDA</category>
+      <category>routing</category>
+      <category>multi-net routing</category>
+      <category>CAD</category>
+      <guid>https://BWbwchen.github.io/eda/iterative-deletion-algorithm</guid>
+      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>hMetis</title>
       <dc:creator>Bo-Wei Chen</dc:creator>
@@ -32,6 +45,7 @@
       <description>Note for EDA routing algorithm - Multi-Commodity Flow Routing Algorithm</description>
       <category>EDA</category>
       <category>routing</category>
+      <category>multi-net routing</category>
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/eda/multi-commodity-flow-routing-algorithm</guid>
       <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
@@ -44,6 +58,7 @@
       <description>Note for EDA routing algorithm - Steiner Min-Max Tree Algorithm</description>
       <category>EDA</category>
       <category>routing</category>
+      <category>multi-net routing</category>
       <category>CAD</category>
       <guid>https://BWbwchen.github.io/eda/steiner-min-max-tree-algorithm</guid>
       <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>

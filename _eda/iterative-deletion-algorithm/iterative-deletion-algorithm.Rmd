@@ -1,0 +1,106 @@
+---
+title: "Iterative Deletion Algorithm"
+description: |
+  Note for EDA routing algorithm - Iterative Deletion Algorithm
+
+author:
+  - name: Bo-Wei Chen
+    url: https://BWbwchen.github.io/
+date: 2022-05-24
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 4
+    self_contained: false
+  toc_float: 
+    collapsed: false
+    smooth_scroll: true
+draft: false
+creative_commons: CC BY
+editor_options: 
+  markdown: 
+    wrap: 72
+categories:
+  - EDA
+  - routing
+  - multi-net routing
+  - CAD
+preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- A standard cell global routing with **sequential routing without the net ordering problem**
+- Construct the routing tree for all nets simultaneously.
+
+
+
+## Feedthrough cell
+- allow a net to cross a row.
+- reduce the routing channel density.
+
+
+### Channel
+- The place that wire will be placed and crossed.
+
+
+### Row
+- The place cell will be placed.
+
+
+## Net connection graph
+- union of the complete graph of all individual nets.
+
+
+## Density
+- ![Picture from S.K. Lim, Practical Problems in VLSI Physical Design Automation](https://i.imgur.com/IXuPQxT.png)
+- density of column is the number of edge that either pass through, begin at, and end at this column.
+- density of edge is the maximum density among the column that this edge span.
+- density of channel is the maximum value of the density of the column in the channel.
+
+
+## Algorithm - Feedthrough cell  insertion phase
+- Decide where to add the feedthrough cell and route a basic routing tree.
+
+
+### Decide where to add the feedthrough cell
+1. Construct the net connection graph first.
+2. Compute the weight of edge.
+	- $w(e(i, j)) = |x_i - x_j| + K \cdot \sum_{e \cap R_k \neq \emptyset} width(R_k)$ , where $K$ is a hyperparameter
+	- wirelength $|x_i - x_j|$
+	- requirement for feedthrough cell $K \cdot \sum_{e \cap R_k \neq \emptyset} width(R_k)$
+3. Sort the edge in increasing order.
+4. Add edge one-by-one into the routing tree until no more "acceptable" edge.
+	- Add the edge, If no cycle happen after add the edge("acceptable edge").
+		- Ensure completeness of the routing tree.
+	- If need feedthrough cell, add it. Remember to **update the row width and other been-effected edge weight**.
+
+
+### Route a basic routing tree for each channel and only accept the required edge.
+1. Construct the complete graph among the pins in the same channel
+2. Remove "unnecessary" edge from the channel-wise complete graph
+	- The wire with cell pin-to-cell pin connection
+		- Remove non-adjacent edge. (From the perspective of x-coordinate)
+	- The wire with cell pin-to- feedthrough cell pin connection
+		- Delete it if cells are on the same row.
+		- Keep it if cells are on the different row.
+3. Union each channel-wise graph to form a basic routing tree.
+
+
+## Algorithm - iterative deletion phase
+- Balance the density of each channel.
+1. Compute the weight of the edge.
+	- $w(e) = \frac{d(e)}{d(C_e)}$
+	- $d(e)$ is the density of the edge.
+	- $d(C_e)$ is the density of the channel that the edge in.
+2. Sort the edge in decreasing order.
+	- We want to delete the edge with high relative high density ratio.
+	- Then we want to delete the edge with longer x-coordinate. (longer wire length).
+	- At the end, we want to delete the edge with absolutely high density.
+3. Delete the "acceptable" edge one-by-one by the order above, until no more acceptable edge.
+	- Delete the edge, If it won't disconnect the nodes from the nets who belong to, after delete the edge("acceptable edge").
+		- **update the weight of all the edge in the same channel.**
+		- Remove the high density and unused edge.

@@ -23,6 +23,7 @@ editor_options:
 categories:
   - EDA
   - routing
+  - multi-net routing
   - CAD
 preview: https://cdn.pixabay.com/photo/2020/09/06/08/00/red-thread-5548304_960_720.jpg
 ---
