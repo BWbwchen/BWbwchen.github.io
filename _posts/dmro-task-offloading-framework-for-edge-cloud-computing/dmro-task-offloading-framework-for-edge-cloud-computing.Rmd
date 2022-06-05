@@ -31,6 +31,8 @@ preview: https://cdn.pixabay.com/photo/2017/01/18/10/01/cloud-computing-1989339_
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+This is my [talk slide](https://drive.google.com/file/d/1qOdS5Y1EEVymd1C9JeoTcHkV-_yuswZq/view?usp=sharing) and [video](https://youtu.be/-d9ASUF3X74).
+
 <a id="org6ce31e8"></a>
 
 # Terminology
