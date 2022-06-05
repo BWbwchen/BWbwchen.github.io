@@ -12,7 +12,18 @@
       <link>https://BWbwchen.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>DMRO Task Offloading framework for Edge-Cloud Computing</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/posts/dmro-task-offloading-framework-for-edge-cloud-computing</link>
+      <description>A short description of the post.</description>
+      <category>distributed system</category>
+      <category>edge computing</category>
+      <guid>https://BWbwchen.github.io/posts/dmro-task-offloading-framework-for-edge-cloud-computing</guid>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.pixabay.com/photo/2017/01/18/10/01/cloud-computing-1989339_960_720.png" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>QEMU</title>
       <dc:creator>Bo-Wei Chen</dc:creator>
