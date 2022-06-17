@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/fibonacci/",
+    "title": "Fibonacci",
+    "description": "Note for Fibonacci",
+    "author": [
+      {
+        "name": "Bo-Wei Chen",
+        "url": "https://BWbwchen.github.io/"
+      }
+    ],
+    "date": "2022-06-17",
+    "categories": [
+      "Fibonacci"
+    ],
+    "contents": "\n\nContents\nBasic\nVorobev equation\nQ-Matrix\nApplication\nPseudo-Random Number\nGenerators (PRNG)\n\n\n\nBasic\n\n\\[\\begin{align*}\nfib(0) &= 0 \\\\\nfib(1) &= 1 \\\\\nfib(n+2) &= fib(n+1) + fib(n) \\\\\n\\end{align*}\\]\n\ndef fib(n):\n    a = b = 1\n    i = 1\n    while i < n-1 :\n        a, b = a+b, a\n        i += 1\n    return a\nreturn [fib(x) for x in range(10)]\n\n1\n\n\n1\n\n\n1\n\n\n2\n\n\n3\n\n\n5\n\n\n8\n\n\n13\n\n\n21\n\n\n34\n\n\nThere has a formula for fibonacci:\n\n\n\\(fib(n) =\n\\frac{1}{\\sqrt{5}}(\\frac{1+\\sqrt{5}}{2})^n-\\frac{1}{\\sqrt{5}}(\\frac{1-\\sqrt{5}}{2})^n\\)\n\n\nBut it is NOT constant time complexity! Because the\nprecision problem of floating point of computer system, it can NOT\ncalculate the correct answer!\n\nVorobev equation\nThe time complexity is \\(O(logn)\\),\nIf we can calculate \\(f(2n)\\) from\n\\(f(n)\\). The Vorobev equation\nsaid:\n\n\n\\(f(n+k)=f(n-1) \\times f(k) + f(n) \\times\nf(k+1)\\)\n\n\nWe consider: \\(n := n+1, k :=\nn\\):\n\n\n\\(f(2n+1)=(f(n+1))^2 + (f(n))^2\\)\n\n\n\n\n\\(f(2n) = f(2n+2) - f(2n+1)\\)\n\n\n\n\n\\(f(2n) = 2 \\times f(n+1) \\times f(n) -\n(f(n))^2\\)\n\n\n\nQ-Matrix\nfrom the code 1, we can rewrite the formula\nas:\n\n\\[\\begin{align*}\n\\begin{pmatrix}\n                    F(n+2) \\\\ F(n+1)\n                \\end{pmatrix}\n=\n\\begin{pmatrix}\n    1 & 1 \\\\\n    1 & 0\n\\end{pmatrix}\n\n\\begin{pmatrix}\n    F(n+1) \\\\ F(n)\n\\end{pmatrix}\n\\end{align*}\\]\n\nWith fast doubling:\n\n\\[\\begin{align*}\n        \\begin{bmatrix}\n         F(2n+1) \\\\\n         F(2n)\n        \\end{bmatrix} &=\n        \\begin{bmatrix}\n         1 & 1 \\\\\n         1 & 0\n        \\end{bmatrix}^{2n}\n        \\begin{bmatrix}\n         F(1) \\\\\n         F(0)\n        \\end{bmatrix}\\\\ \\\\ &=\n        \\begin{bmatrix}\n         1 & 1 \\\\\n         1 & 0\n        \\end{bmatrix}^n\n        \\begin{bmatrix}\n         1 & 1 \\\\\n         1 & 0\n        \\end{bmatrix}^n\n        \\begin{bmatrix}\n         F(1) \\\\\n         F(0)\n        \\end{bmatrix}\\\\ \\\\ &=\n        \\begin{bmatrix}\n        F(n+1) & F(n) \\\\\n        F(n) & F(n-1)\n        \\end{bmatrix}\n        \\begin{bmatrix}\n        F(n+1) & F(n) \\\\\n        F(n) & F(n-1)\n        \\end{bmatrix}\n        \\begin{bmatrix}\n         1 \\\\\n         0\n        \\end{bmatrix}\\\\ \\\\ &=\n        \\begin{bmatrix}\n         F(n+1)^2 + F(n)^2\\\\\n         F(n)F(n+1) + F(n-1)F(n)\n        \\end{bmatrix}\n        \\end{align*}\\]\n\nWe will get:\n\n\\[\\begin{align*}\nF(2k+1) &= F(k+1)^2+F(k)^2\\\\\nF(2k) &= F(k)[2F(k+1) - F(k)] \\\\\n\\end{align*}\\]\n\nThen we can rewrite the code 1 with fast\ndoubling:\nFast_Fib(n)\n    a = 0; b = 1;       // m = 0\n    for i = (number of binary digit in n) to 1\n        t1 = a*(2*b - a);\n        t2 = b^2 + a^2;\n        a = t1; b = t2; // m *= 2\n        if (current binary digit == 1) // because we only return a\n            t1 = a + b; // m++\n            a = b; b = t1;\n    return a;\n\nApplication\n\nPseudo-Random Number\nGenerators (PRNG)\nLagged\nFibonacci generator\n    f[0] = 0;\n    f[1] = 1;\n    f[i] = (f[i - 1] + f[i - 2]) % 100;\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-06-17T11:25:30+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/dmro-task-offloading-framework-for-edge-cloud-computing/",
     "title": "DMRO Task Offloading framework for Edge-Cloud Computing",
     "description": "Paper note of DMRO task offloading algorithm",

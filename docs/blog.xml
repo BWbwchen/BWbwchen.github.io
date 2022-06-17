@@ -12,7 +12,16 @@
       <link>https://BWbwchen.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Fibonacci</title>
+      <dc:creator>Bo-Wei Chen</dc:creator>
+      <link>https://BWbwchen.github.io/posts/fibonacci</link>
+      <description>Note for Fibonacci</description>
+      <category>Fibonacci</category>
+      <guid>https://BWbwchen.github.io/posts/fibonacci</guid>
+      <pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>DMRO Task Offloading framework for Edge-Cloud Computing</title>
       <dc:creator>Bo-Wei Chen</dc:creator>
