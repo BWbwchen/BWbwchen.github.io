@@ -35,13 +35,16 @@ I am a master student major in Computer Science in National Tsing Hua University
 - **National Tsing Hua University**, HsinChu, Tawan | BS in Computer Science
 
 <aside>
- Sep. 2018 - Jun. 2022 (expected)
+ Sep. 2018 - Jun. 2022
 </aside>
 
   My undergraduate `r icon_link("file", "Research", "https://drive.google.com/file/d/1HpByl241IlU5HDt7_APYjcbWuynnbvOe/view?usp=sharing")` mainly focuses on CV (computer vision) and Person ReID(Person Re-identification). 
 
 
 ## 💻 Work Experience
+### Software Engineer Intern at [MediaTek](https://www.mediatek.com/)
+<aside>Jul. 2022 - Aug. 2022 $\cdot$ Hsinchu, Taiwan</aside>
+
 ### Software Engineer Intern at [Logitech](https://www.logitech.com/)
 
 <aside>Jul. 2021 - Aug. 2021 $\cdot$ Hsinchu, Taiwan</aside>
