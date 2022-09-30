@@ -19,15 +19,15 @@ library(distilltools)
 </style>
 
 ## About me
-I’m Bo-Wei Chen, you can call me Tim.
+Bo-Wei Chen(Tim) is a master's student at the Department of Computer Science, National Tsing Hua University, working with Prof. Ting-Chi Wang as a member of the VLSI/CAD Lab(TCLAB) on placement algorithms in Physical design. 
 
-I am a master student major in Computer Science in National Tsing Hua University. I study physical design in EDA and I love Long-distance running.
+He received his bachelor’s degree at the Department of Computer Science, National Tsing Hua University in 2022. 
 
 ## 🎓 Education
 - **National Tsing Hua University**, HsinChu, Tawan | MS in Computer Science
 
 <aside>
- Sep. 2022(expected) - Jun. 2024 (expected)
+ Sep. 2022 - Jun. 2024 (expected)
 </aside>
 
   My research topic is EDA, mainly focus on physical design. (Instructor: Prof. Ting-Chi Wang)
