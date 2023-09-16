@@ -110,54 +110,50 @@
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'project' %}
+          {% for proj in site.data.project %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="No image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="{{proj.image}}" alt="No image" style="width:auto; height:auto; max-width:100%;" />
             </td>
             <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
+              <h3>{{proj.title}}</h3>
               <br>
               <!-- {{post.authors}} -->
 
               <br>
-              <em>{{post.venue}}</em>, {{ post.time }}
+              {{ proj.time }}
               <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
+              {% if proj.arxiv %}
+              <a href="{{proj.arxiv}}">arxiv</a> /
               {% endif %}
-              {% if post.article %}
-              <a href="{{post.article}}">article</a> /
+              {% if proj.article %}
+              <a href="{{proj.article}}">article</a> /
               {% endif %}
-              {% if post.doc %}
-              <a href="{{post.doc}}">doc</a> /
+              {% if proj.doc %}
+              <a href="{{proj.doc}}">doc</a> /
               {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
+              {% if proj.video %}
+              <a href="{{proj.video}}">video</a> /
               {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
+              {% if proj.code %}
+              <a href="{{proj.code}}">code</a> /
               {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
+              {% if proj.poster %}
+              <a href="{{proj.poster}}">poster</a> /
               {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
+              {% if proj.slides %}
+              <a href="{{proj.slides}}">slides</a> /
               {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
+              {% if proj.website %}
+              <a href="{{proj.website}}">website</a> /
               {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
+              {% if proj.youtube %}
+              <a href="{{proj.youtube}}">youtube</a> /
               {% endif %}
               <p></p>
-              {{ post.excerpt }}
+              {{ proj.descript }}
             </td>
           </tr>
-          {% endif %}
-          {% endfor %}
           {% endfor %}
         </table>
         <br>
