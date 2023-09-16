@@ -80,18 +80,16 @@
                 </div>
                 <div class="panel-body" id="oScroll" >
                 <div id="scroll">
-                <p>
-                    <strong>Jul. - Aug., 2022</strong>: SWE intern <a href="https://www.mediatek.com/">@MediaTek</a>
-                </p>
-                <p>
-                    <strong>June, 2022</strong>: Graduate from National Tsing Hua University with bachelor degree in Computer science.
-                </p>
-                <p>
-                    <strong>Jul. - Aug., 2021</strong>: SWE intern <a href="https://www.logitech.com/">@Logitech</a>
-                </p>
-                <p>
-                    <strong>Mar. - Apr., 2021</strong>: Part-time Backend Engineer <a href="">@Uniiqc</a>
-                </p>
+
+                  <!-- ref: https://github.com/tsy935/tsy935.github.io/blob/2be8dfe1516b4b7ca451fcb3b2c7e6a8b06aac9a/_layouts/default.html#L86C39-L97 -->
+                {% for post in site.posts %}
+                {% for cat in post.categories %}
+                {% if cat == 'news' %}
+                  {{ post.excerpt }}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
                 </div>
             </div>
           </div>
