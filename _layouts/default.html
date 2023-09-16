@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E00L9PT3V9"></script> -->
+  <!-- <script> -->
+  <!--   window.dataLayer = window.dataLayer || []; -->
+  <!--   function gtag(){dataLayer.push(arguments);} -->
+  <!--   gtag('js', new Date()); -->
+
+  <!--   gtag('config', 'G-E00L9PT3V9'); -->
+  <!-- </script> -->
+  <title>{{ site.name }}</title>
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+  <meta name="author" content="{{ site.name }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:60%;vertical-align:middle">
+              <h1>
+                Bo-Wei Chen
+              </h1>
+
+              <p>
+                I am a Master student major in Computer Science in National Tsing Hua University, where I work on VLSI 3D placement. My advisor is <a href="http://www.cs.nthu.edu.tw/~tcwang/">Ting-Chi Wang</a>.
+
+              </p>
+
+              <p>
+                I received my bachelor’s degree at the Department of Computer Science, National Tsing Hua University in 2022.
+              </p>
+              <p style="text-align:center">
+                  Contact: tim.chenbw [ a t ] gmail.com
+                  <br>
+                <!-- <a target="_blank" href="mailto:tim.chenbw@gmail.com"> Email</a> &nbsp;/&nbsp; -->
+                <a href="https://github.com/bwbwchen">GitHub</a> &nbsp;/&nbsp;
+                <!-- <a href="https://scholar.google.com/citations?user=GCYG4GoAAAAJ">Google Scholar</a> &nbsp;/&nbsp; -->
+                <a href="https://www.linkedin.com/in/bo-wei-chen"> LinkedIn </a> &nbsp;/&nbsp;
+                <a href="https://drive.google.com/file/d/1t8FV8S4jzDyio3ZeNEqPZfboJH8evSoM/view?usp=sharing"> CV </a> &nbsp;/&nbsp;
+                <a href="https://tim-note.vercel.app/"> My Notes </a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <img style="width:100%;max-width:100%" alt="profile photo" src="https://avatars.githubusercontent.com/u/44916048?v=4">
+            </td>
+          </tr>
+        </table>
+
+        <!-- Scrollbar code adapted from https://github.com/kkhetarpal/kkhetarpal.github.io/blob/master/index.html#L200 -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <h1>Highlights / News</h1>
+              <div class="container sidebar col-md-3">
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"></h4>
+                </div>
+                <div class="panel-body" id="oScroll" >
+                <div id="scroll">
+                <p>
+                    <strong>Jul. - Aug., 2022</strong>: SWE intern <a href="https://www.mediatek.com/">@MediaTek</a>
+                </p>
+                <p>
+                    <strong>June, 2022</strong>: Graduate from National Tsing Hua University with bachelor degree in Computer science.
+                </p>
+                <p>
+                    <strong>Jul. - Aug., 2021</strong>: SWE intern <a href="https://www.logitech.com/">@Logitech</a>
+                </p>
+                <p>
+                    <strong>Mar. - Apr., 2021</strong>: Part-time Backend Engineer <a href="">@Uniiqc</a>
+                </p>
+                </div>
+            </div>
+          </div>
+
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h1>Projects</h1>
+              <p>
+                I'm interested in Backend Developing, Distributed System, Parallel Computing and VLSI Placement.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'project' %}
+          <tr>
+            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+              <img src="{{post.image}}" alt="No image" style="width:auto; height:auto; max-width:100%;" />
+            </td>
+            <td style="padding:2.5%;width:75%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              <!-- {{post.authors}} -->
+
+              <br>
+              <em>{{post.venue}}</em>, {{ post.time }}
+              <br>
+              {% if post.arxiv %}
+              <a href="{{post.arxiv}}">arxiv</a> /
+              {% endif %}
+              {% if post.article %}
+              <a href="{{post.article}}">article</a> /
+              {% endif %}
+              {% if post.doc %}
+              <a href="{{post.doc}}">doc</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{post.video}}">video</a> /
+              {% endif %}
+              {% if post.code %}
+              <a href="{{post.code}}">code</a> /
+              {% endif %}
+              {% if post.poster %}
+              <a href="{{post.poster}}">poster</a> /
+              {% endif %}
+              {% if post.slides %}
+              <a href="{{post.slides}}">slides</a> /
+              {% endif %}
+              {% if post.website %}
+              <a href="{{post.website}}">website</a> /
+              {% endif %}
+              {% if post.youtube %}
+              <a href="{{post.youtube}}">youtube</a> /
+              {% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+Adapted from <a style="font-size:small;" href="https://leonidk.com/">Leonid Keselman's fork</a> of <a style="font-size:small;" href="https://jonbarron.info">John Barron's website</a>.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
+
