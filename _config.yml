@@ -93,3 +93,4 @@ exclude:
   - _temp/
   - .envrc
   - shell.nix
+  - blog
