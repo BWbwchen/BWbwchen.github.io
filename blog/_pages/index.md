@@ -23,3 +23,7 @@ permalink: /
   {% endfor %}
 </ul>
 
+<p style="font-size:small;">
+Adapted from <a style="font-size:small;" href="https://github.com/maximevaillancourt/digital-garden-jekyll-template"> maximevaillancourt's template</a> with <a style="font-size:small;" href="https://github.com/kepano/slashpackaging">Steph Ango's theme</a>.
+</p>
+
